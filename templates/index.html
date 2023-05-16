@@ -14,12 +14,92 @@
 
     <title>Member</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Noto Sans KR', sans-serif;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 
+    <style>
+        .wrap {
+            /* 웹종반 1-9 강의 참고 */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 1320px;
+            height: 1500px;
+
+            margin: 0px auto 0px auto;
         }
+
+        #main_banner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            width: 1320px;
+            height: 300px;
+
+            background-image: url('/static/image/banner.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #main_title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0px 0px 10px 0;
+            font-size: 80px;
+            font-weight: bold;
+            font-family: 'Alfa Slab One', cursive;
+            letter-spacing : 6px;
+
+            color: white;
+            text-shadow: -1px 0 #000, 0 2.5px #000, 1.5px 0 #000, 0 -1px #000;
+        }
+
+        #nav {
+            width: 1320px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+            border: 0.5px solid gainsboro;
+        }
+
+        div>ol {
+            display: flex;
+            flex-direction: row;
+            align-items: right;
+            justify-content: right;
+            margin-right: 40px;
+        }
+
+        div>ol>li {
+            margin: 0px 30px 0px 30px;
+            list-style: none;
+            font-weight: bold;
+            height: 25px;
+            font-size: 24px;
+        }
+
+        /* 여기까지 김장원  */
+        /* 이은비 */
+
+        #team {
+            height: 300px;
+            margin : 20px;
+        }
+
+        /* 이은비 */
+
+        /* 아래는 이현경님 */
+
         .title {
             padding: 30px;
         }
@@ -39,58 +119,6 @@
 
         .click_img {
             border-radius: 100%
-        }
-
-        body {
-            text-align: center;
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-            width: 1280px;
-            margin: 0px 320px 0px 320px;
-            height: 3000px;
-        }
-
-        #main_banner {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            
-            background-color: aqua;
-            background-image: url('/static/image/background2');
-            width: 1280px;
-            height: 300px;
-
-            background-size: cover;
-            background-repeat: no-repeat;
-            font-size: 25px;
-        }
-
-        #nav {
-            width: 800px;
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-        }
-
-        div>ol {
-
-            display: flex;
-            flex-direction: row;
-            align-items: right;
-            justify-content: right;
-        }
-
-        div>ol>li {
-            margin: 0px 20px 0px 20px;
-            list-style: none;
-            font-weight: bold;
-            font-size: 24px;
-        }
-
-        span {
-            font-size: 15px;
         }
     </style>
     <script type="text/javascript">
@@ -120,85 +148,93 @@
     </script>
 
 <body>
-    <div id="main_banner">
+    <div class="wrap">
+        <div id="main_banner">
+            <div>
+                <div>
+                    <h1 id="main_title">
+                        <p>E 1 I 4</p>
+                    </h1>
+
+                </div>
+                <div>
+                    <h1>
+                        <p> &nbsp;</p>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div id="nav">
+            <ol>
+                <li>E1I4 INTRO</li>
+                <li>Member</li>
+                <li>Design_Empty</li>
+                <li>Guest Book</li>
+            </ol>
+        </div>
+        <div id = "team">
+            <h1>팀소개</h1>
+
+        </div>
+
+
+        <div class="title">
+            <h2>MEMBER</h2>
+        </div>
+        <div class="member">
+            <div class="row row-cols-1 row-cols-md-5 g-2">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="click_img"
+                            alt="..." onclick="profile()">
+                        <div class="name">
+                            <h3>김희석</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512" class="click_img"
+                            alt="..." onclick="profile()">
+                        <div class="name">
+                            <h3>이은비</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="click_img"
+                            alt="..." onclick="profile()">
+                        <div class="name">
+                            <h3>이현경</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="click_img"
+                            alt="..." onclick="profile()">
+                        <div class="name">
+                            <h3>김장원</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="click_img"
+                            alt="..." onclick="profile()">
+                        <div class="name">
+                            <h3>임수영</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div>
-            <div>
-                <h1>
-                    <p> &nbsp;</p>
-                </h1>
-            </div>
-            <div>
-                <h1>
-                    <p>우리는 E1I4 <span>이에요요</span></p>
-                </h1>
-            </div>
+            <button onclick="location.href='/myprofile/new'">상세페이지</button>
         </div>
     </div>
-    <div id="nav">
-        <ol>
-            <li>E1I4</li>
-            <li>Member</li>
-            <li>guest book</li>
-        </ol>
-    </div>
-
-    <div class="title">
-        <h2>MEMBER</h2>
-    </div>
-    <div class="member">
-        <div class="row row-cols-1 row-cols-md-5 g-2">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="click_img"
-                        alt="..." onclick="profile()">
-                    <div class="name">
-                        <h3>김희석</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512" class="click_img"
-                        alt="..." onclick="profile()">
-                    <div class="name">
-                        <h3>이은비</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="click_img"
-                        alt="..." onclick="profile()">
-                    <div class="name">
-                        <h3>이현경</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="click_img"
-                        alt="..." onclick="profile()">
-                    <div class="name">
-                        <h3>김장원</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="click_img"
-                        alt="..." onclick="profile()">
-                    <div class="name">
-                        <h3>임수영</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <button onclick="location.href='/myprofile/new'">상세페이지</button>
-    </div>
-
 </body>
 
 </html>
