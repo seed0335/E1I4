@@ -7,13 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
     * {
         font-family: 'Noto Sans KR', sans-serif;
     }
+
+    body {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main_banner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        background-image: url("benner_back.png");
+        width: 1280px;
+        height: 300px;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 25px;
+    }
+
+    #nav {
+        width: 800px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+
+    div>ol {
+
+        display: flex;
+        flex-direction: row;
+        align-items: right;
+        justify-content: right;
+    }
+
+    div>ol>li {
+        margin: 0px 20px 0px 20px;
+        list-style: none;
+    }
+
+    span {
+        font-size: 15px;
+    }
+
 </style>
 <script>
     function getButton() {
@@ -33,15 +80,27 @@
 </script>
 
 <body>
-    <button onclick="getButton()">getButton</button>
-    <button onclick="postButton()">postButton</button>
-    <ul>
-        <li>github 풀리퀘스트 확인 : (팀원과 함께 먹고 싶은 음식 3가지? []에 넣기)</li>
-        <li>김희석 : [고][구][마]</li>
-        <li>이현경 : [파스타][햄버거][샐러드]</li>
-        <li>임수영 : [1][2][3]</li>
-        <li>이은비 : [햄버거][치킨][]</li>
-        <li>김장원 : [피자][순살치킨][햄버거]</li>
-    </ul>
+    <div id="main_banner">
+        <div>
+            <div>
+                <h1>
+                    <p> &nbsp;</p>
+                </h1>
+            </div>
+            <div>
+                <h1>
+                    <p>우리는 E1I4 <span>이에요요</span></p>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div id="nav">
+        <ol>
+            <li>E1I4</li>
+            <li>Member</li>
+            <li>guest book</li>
+        </ol>
+    </div>
 </body>
+
 </html>
