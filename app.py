@@ -5,6 +5,15 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+@app.route("/")
+def h1():
+    return render_template('img_static.html')
+
+@app.route("/myprofile/new", methods=["GET"])
+def post_profile():
+
+    return render_template('sub.html')
+
 @app.route('/test', methods=['GET'])
 def test_get():
    title_receive = request.args.get('title_give')
