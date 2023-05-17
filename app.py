@@ -3,6 +3,7 @@ app = Flask(__name__)
 
 import certifi
 ca = certifi.where()
+print("1")
 
 from pymongo import MongoClient
 client = MongoClient('mongodb+srv://sparta:test@cluster0.txlb0px.mongodb.net/?retryWrites=true&w=majority',tlsCAFile =ca)
