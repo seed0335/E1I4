@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -17,246 +17,279 @@
 
     <title>상세페이지</title>
 
-<style>
-    ::selection {
-        user-select : none
-        /* 드래그 못하게 */
-    }
+    <style>
+        ::selection {
+            user-select: none
+                /* 드래그 못하게 */
+        }
 
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
-    ::-webkit-scrollbar-thumb {
-        background-color: #2f3542;
-        border-radius: 10px;
-        background-clip: padding-box;
-        border: 2px solid transparent;
-    }
+        ::-webkit-scrollbar-thumb {
+            background-color: #2f3542;
+            border-radius: 10px;
+            background-clip: padding-box;
+            border: 2px solid transparent;
+        }
 
-    .container::-webkit-scrollbar-track {
-        background-color: grey;
-        border-radius: 10px;
-        box-shadow: inset 0px 0px 5px white;
-    }
+        .container::-webkit-scrollbar-track {
+            background-color: grey;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 5px white;
+        }
 
-    .imoge {
-        position: absolute;
-        width: 65px;
-        height: 57px;
-        left: 154px;
-        top: 53px;
+        .imoge {
+            position: absolute;
+            width: 49px;
+            height: 41px;
+            left: 523px;
+            top: 151px;
 
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 70px;
-        line-height: 85px;
-        /* background-color: red; */
-        text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.34);
-    }
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 70px;
+            line-height: 85px;
+            /* background-color: red; */
+            text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+        }
 
-    .photo {
-        background-image: url('https://ibb.co/GWq3MHz');
-        box-sizing: border-box;
-        position: absolute;
-        width: 321px;
-        height: 307px;
-        left: 154px;
-        top: 165px;
+        .photo {
+            box-sizing: border-box;
+            position: absolute;
+            width: 293px;
+            height: 283px;
+            left: 523px;
+            top: 248px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 50px;
+            background-image: url('https://cdn.pixabay.com/photo/2023/04/03/03/20/plant-7895897_1280.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
-        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
-        border-radius: 50px;
-        background-image: url('https://i.ibb.co/HtjpPh5/Frame-1.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        
+        .name {
+            position: absolute;
+            width: 250px;
+            height: 77px;
+            left: 890px;
+            top: 296px;
+            font-family: 'Inter';
+            font-weight: 600;
+            font-size: 60px;
+            line-height: 77px;
+        }
 
-    }
+        .about_me_area {
+            position: absolute;
+            width: 288px;
+            height: 158px;
+            left: 905px;
+            top: 373px;
+            background: transparent;
+        }
 
-    .name {
-        background-color: transparent;
-        position: absolute;
-        width: 345px;
-        height: 118px;
-        left: 550px;
-        top: 208px;
-        font-family: 'Inter';
-        font-weight: 600;
-        font-size: 80px;
-        line-height: 116px;
-    }
+        .about_me_text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+        }
 
-    .about_me_text {
-        background-color: transparent;
-        position: absolute;
-        width: 345px;
-        height: 118px;
-        left: 560px;
-        top: 305px;
-        font-size: 30px;
-        font-family: 'Inter';
-    }
+        #tmi_area {
+            position: absolute;
+            width: 864px;
+            height: 323px;
+            left: 523px;
+            top: 566px;
+            background: rgba(217, 217, 217, 0.22);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 80px;
+        }
 
-    #tmi_area {
-        position: absolute;
-        width: 1133px;
-        height: 348px;
-        left: 154px;
-        top: 542px;
+        .profile {
+            position: absolute;
+            left: 80px;
+            top: 40px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 567;
+            font-size: 48px;
+            line-height: 56px;
+            font-variant: small-caps;
+        }
 
-        background-color: #D9D9D9;
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-        border-radius: 80px;
-    }
+        .text {
+            background-color: transparent;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+        }
 
-    .profile {
-        background-color: transparent;
-        position: absolute;
-        left: 80px;
+        .text:hover {
+            outline: none;
+            cursor: pointer
+        }
 
-        font-family: 'Inter';
-        font-weight: 600;
-        font-size: 60px;
-        line-height: 116px;
-        color: #000000;
-    }
+        summary::marker {
+            content: "+ ";
+            font-family: monospace;
+            font-size: 16px;
+        }
 
-    .text {
-        background-color: transparent;
-        position: absolute;
-        left: 80px;
-        top: 100px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-    }
+        details[open] summary::marker {
+            content: "- ";
+        }
 
-    .text:hover {
-        outline: none;
-        cursor: pointer
-    }
+        .button {
+            border: none;
+            position: absolute;
+            width: 133px;
+            height: 53px;
+            left: 1262px;
+            top: 911px;
 
-    summary::marker {
-        content: "+ ";
-        font-family: monospace;
-    }
+            background: #4A99E9;
+            color: white;
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 50px;
+        }
 
-    details[open] summary::marker {
-        content: "- ";
-    }
+        .button:hover {
+            background: #3E81C4;
+        }
 
-    .button {
-        border: none;
-        position: absolute;
+        .button:active {
+            transform: scale(0.95);
+        }
+    </style>
 
-        width: 219px;
-        height: 72px;
-        left: 1068px;
-        top: 914px;
-        background: #D9D9D9;
-        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
-        border-radius: 50px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-size: 25px;
-    }
-
-    .button:hover {
-        background: #c6c6c6;
-    }
-
-    .button:active {
-        transform: scale(0.95);
-    }
-</style>
-
-<script>
-    window.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('details').forEach(function (item) {
-            item.addEventListener("toggle", event => {
-                let toggled = event.target;
-                if (toggled.attributes.open) {
-                    document.querySelectorAll('details[open]').forEach(function (opened) {
-                        if (toggled != opened)
-                            opened.removeAttribute('open');
-                    });
-                }
-            })
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('details').forEach(function (item) {
+                item.addEventListener("toggle", event => {
+                    let toggled = event.target;
+                    if (toggled.attributes.open) {
+                        document.querySelectorAll('details[open]').forEach(function (opened) {
+                            if (toggled != opened)
+                                opened.removeAttribute('open');
+                        });
+                    }
+                })
+            });
         });
-    });
 
-    $(document).ready(function () {
-        show_bucket();
-    });
-    function show_bucket() {
-        fetch('/bucket').then(res => res.json()).then(data => {
-            let rows = data['result']
-            $('#bucket-list').empty()
-            rows.forEach((a) => {
-                let bucket = a['bucket']
-                let temp_html = `<li>
-                                <h2>✅ ${bucket}</h2>
-                                </li>`
-                $('#bucket-list').append(temp_html)
-            })
-        })
-    }
-
-    function save_bucket() {
-        let bucket = $("#bucket").val();
-
-        let formData = new FormData();
-        formData.append("bucket_give", bucket);
-
-        fetch('/bucket', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
-            alert(data["msg"]);
-            window.location.reload();
+        $(document).ready(function () {
+            show_profiles();
+            console.log("ready")
         });
-    }
+        function show_profiles() {
+            fetch('/myprofile/new1').then(res => res.json()).then(data => {
+                let rows = data['result']
+                console.log(rows)
+                $('#container').empty();
+                rows.forEach((a) => {    
+                    let imoge = a['imoge']
+                    let photo = a['photo']
+                    let name = a['name']
+                    let about_me = a['about_me']
+                    let q1 = a['q1']
+                    let q2 = a['q2']
+                    let q3 = a['q3']
+                    let q4 = a['q4']
+                    
+                    let temp_html = `<div class="container" id="container">
+                                        <div>
+                                            <text class="imoge">${imoge}</text>
+                                        </div>
+                                        <div class="photo">${photo}</div>
+                                        <div>
+                                            <text id="name" class="name">${name}</text>
+                                        </div>
+                                        <div id="test" class="about_me_area">
+                                            <text class="about_me_text">${about_me}</text>
+                                        </div>
 
-</script>
+                                        <div id="tmi_area">
+                                            <text class="profile">
+                                                Profile
+                                            </text>
+                                            <div class="text">
+                                                <details>
+                                                    <summary>사용할 수 있는 언어</summary>
+                                                    <p>${q1}</p>
+                                                </details>
 
+                                                <details>
+                                                    <summary>자신의 장점</summary>
+                                                    <p>${q2}</p>
+                                                </details>
+
+                                                <details>
+                                                    <summary>나의 MBTI</summary>
+                                                    <p>${q3}</p>
+                                                </details>
+
+                                                <details>
+                                                    <summary>TMI</summary>
+                                                    <p>${q4}</p>
+                                                </details>
+                                            </div>
+                                        </div>
+                                        <button type="button" onclick="location.href='http://localhost:5000/' " class="button">뒤로가기</button>
+                                    </div>`
+                    $('#container').append(temp_html)
+                })
+            })
+        }
+    </script>
 </head>
-    <div class="container">
-        <div>
-            <text class="imoge">🐶</text>
-        </div>
-        <div class="photo"></div>
-        <div>
-            <text class="name">이름</text>
-        </div>
-        <div>
-            <text class="about_me_text">자기소개 내용</text>
-        </div>
 
-        <div id="tmi_area">
-            <text class="profile">
-                Profile
-            </text>
-            <div class="text">
-                <details>
-                    <summary>사용할 수 있는 언어</summary>
-                    <p>내부에 넣을 내용을 입력해주세요</p>
-                </details>
-
-                <details>
-                    <summary>자신의 장점</summary>
-                    <p>내부에 넣을 내용을 입력해주세요</p>
-                </details>
-
-                <details>
-                    <summary>MBTI</summary>
-                    <p>내부에 넣을 내용을 입력해주세요</p>
-                </details>
-
-                <details>
-                    <summary>TMI</summary>
-                    <p>내부에 넣을 내용을 입력해주세요</p>
-                </details>
-            </div>
-        </div>
-        <button type="button" onclick="location.href='http://localhost:5000/' " class="button">돌아가기</button>
+<body>
+<div class="container" id="container">
+    <div>
+        <text class="imoge">🐶</text>
     </div>
+    <div class="photo"></div>
+    <div>
+        <text class="name">이름</text>
+    </div>
+    <div id="test" class="about_me_area">
+        <text class="about_me_text">자기소개</text>
+    </div>
+
+    <div id="tmi_area">
+        <text class="profile">
+            Profile
+        </text>
+        <div class="text">
+            <details>
+                <summary>사용할 수 있는 언어</summary>
+                <p>내부에 넣을 내용을 입력해주세요</p>
+            </details>
+
+            <details>
+                <summary>자신의 장점</summary>
+                <p>내부에 넣을 내용을 입력해주세요</p>
+            </details>
+
+            <details>
+                <summary>나의 MBTI</summary>
+                <p>내부에 넣을 내용을 입력해주세요</p>
+            </details>
+
+            <details>
+                <summary>TMI</summary>
+                <p>내부에 넣을 내용을 입력해주세요</p>
+            </details>
+        </div>
+    </div>
+    <button type="button" onclick="location.href='http://localhost:5000/' " class="button">뒤로가기</button>
+</div>
 </body>

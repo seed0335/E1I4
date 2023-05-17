@@ -3,6 +3,7 @@ app = Flask(__name__)
 
 # mongoDB는 김장원 - 본인 mongoDB로 변경하기
 from pymongo import MongoClient
+
 client = MongoClient('mongodb+srv://sparta:test@cluster0.ziorpfn.mongodb.net/?retryWrites=true&w=majority')
 db = client.dbsparta
 
@@ -15,15 +16,21 @@ def post_profile():
 
     return render_template('sub.html')
 
+@app.route("/myprofile/new1", methods=["GET"])
+def profiles_get():
+    all_profiles = list(db.profiles.find({}, {'_id': False}))
+
+    return jsonify({'result': all_profiles})
+
 @app.route('/sub')
 def sub():
     return render_template('sub.html')
 
 @app.route('/test', methods=['GET'])
 def test_get():
-   title_receive = request.args.get('title_give')
-   print(title_receive)
-   return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
+    title_receive = request.args.get('title_give')
+    print(title_receive)
+    return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
 
 
 # 방명록 저장하는 곳
