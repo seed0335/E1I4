@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
 db = client.dbsparta
 
 @app.route('/')
@@ -12,14 +12,14 @@ def home():
 
 @app.route('/guestbook', methods=['POST'])
 def guestbook_post():
-   name_receive = request.form['name_give']
-   comment_receive = request.form['comment_give']
-   doc = {
-       'name'  :name_receive,
-       'comment' : comment_receive
-   }
-   db.guestbook_comments.insert_one(doc)
-   return jsonify({'msg': '방명록이 등록되었습니다!'})
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
+    doc = {
+        'name'  :name_receive,
+        'comment' : comment_receive
+    }
+    db.guestbook_comments.insert_one(doc)
+    return jsonify({'msg': '방명록이 등록되었습니다!'})
 
 @app.route("/")
 def h1():
@@ -30,15 +30,21 @@ def post_profile():
 
     return render_template('sub.html')
 
+@app.route("/myprofile/new1", methods=["GET"])
+def profiles_get():
+    all_profiles = list(db.profiles.find({}, {'_id': False}))
+
+    return jsonify({'result': all_profiles})
+
 @app.route('/sub')
 def sub():
     return render_template('sub.html')
 
 @app.route('/test', methods=['GET'])
 def test_get():
-   title_receive = request.args.get('title_give')
-   print(title_receive)
-   return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
+    title_receive = request.args.get('title_give')
+    print(title_receive)
+    return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
 
 
 @app.route("/guestbook", methods=["GET"])
