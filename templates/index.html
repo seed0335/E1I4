@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -19,6 +26,12 @@
     <title>Member</title>
 
     <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+    * {
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+        
         .wrap {
             /* 웹종반 1-9 강의 참고 */
             text-align: center;
@@ -178,6 +191,51 @@
             })
         }
     </script>
+  <script>
+    $(document).ready(function () {
+        show_comment();
+      });
+      
+      function save_comment() {
+        let name = $('#name').val()
+        let comment = $('#comment').val()
+
+        let formData = new FormData();
+        formData.append("name_give", name);
+        formData.append("comment_give", comment);
+
+        fetch('/guestbook', {method: "POST",body: formData,}).then((res) => res.json()).then((data) => {
+            alert(data["msg"]);
+            window.location.reload()
+          });
+      }
+      function show_comment() {
+        fetch('/guestbook').then((res) => res.json()).then((data) => {
+            let rows = data['result']
+            $('#comment-list').empty()
+            rows.forEach((a)=>{
+                let name = a['name']
+                let comment = a['comment']
+                let temp_html = `<div class="card">
+                              <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                  <div style="width:100px; height:70px; border:1px solid grey; float:left;">
+                                  ${comment}
+                                  </div>
+                                  <div style="width:150px; height:70px; border:1px solid grey; float:right;">
+                                  <footer class="blockquote-footer">${name}</footer>
+                                  </div>
+                                </blockquote>
+                              </div>
+                            </div>`
+                $('#comment-list').append(temp_html)
+            })
+            
+
+        
+				})
+      }
+</script>
 </head>
 
 <body>
@@ -302,6 +360,52 @@
         <div>
             <button onclick="location.href='/myprofile/new'">상세페이지</button>
         </div>
+           
+    <div class="mypic">
+        <h1>GUEST BOOK</h1>
+      </div>
+      <div class="mypost">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="name" placeholder="닉네임" />
+        </div>
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="방명록을 작성하세요"
+            id="comment"
+            style="height: 100px"
+          ></textarea>
+        </div>
+        <button onclick="save_comment()" type="button" class="btn btn-dark">
+          댓글 남기기
+        </button>
+      </div>
+      <div class="mycards" id="comment-list">
+        <div class="card">
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>새로운 앨범 너무 멋져요!</p>
+              <footer class="blockquote-footer">호빵맨</footer>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>새로운 앨범 너무 멋져요!</p>
+              <footer class="blockquote-footer">호빵맨</footer>
+            </blockquote>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>새로운 앨범 너무 멋져요!</p>
+              <footer class="blockquote-footer">호빵맨</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>                                                    
     </div>
 </body>
 </html>
