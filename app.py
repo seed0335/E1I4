@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 # mongoDB는 김장원 - 본인 mongoDB로 변경하기
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://sparta:test@cluster0.ziorpfn.mongodb.net/?retryWrites=true&w=majority')
 db = client.dbsparta
 
 @app.route('/')
