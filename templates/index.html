@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -7,17 +7,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
-</head>
 
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <title>Member</title>
+
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
     * {
         font-family: 'Noto Sans KR', sans-serif;
     }
-</style>
-<script>
+        
+        .wrap {
+            /* 웹종반 1-9 강의 참고 */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 1320px;
+            height: 1500px;
+
+            margin: 0px auto 0px auto;
+        }
+
+        #main_banner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            width: 1320px;
+            height: 300px;
+
+            background-image: url('/static/image/banner.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #main_title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0px 0px 10px 0;
+            font-size: 80px;
+            font-weight: bold;
+            font-family: 'Alfa Slab One', cursive;
+            letter-spacing: 6px;
+
+            color: white;
+            text-shadow: -1px 0 #000, 0 2.5px #000, 1.5px 0 #000, 0 -1px #000;
+        }
+
+        #nav {
+            width: 1320px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+            border: 0.5px solid gainsboro;
+        }
+
+        div>ol {
+            display: flex;
+            flex-direction: row;
+            align-items: right;
+            justify-content: right;
+            margin-right: 40px;
+        }
+
+        div>ol>li {
+            margin: 0px 30px 0px 30px;
+            list-style: none;
+            font-weight: bold;
+            height: 25px;
+            font-size: 24px;
+        }
+
+        /* 여기까지 김장원  */
+        /* 아래는 이은비 */
+        .teamtitle {
+            text-align: center;
+        }
+
+        .team-body {
+            background-color: grey;
+            width: 300px;
+            height: 100px;
+            margin: 20px auto 80px auto;
+        }
+
+        .card-header {
+            font-size: x-large;
+            text-align: center;
+        }
+
+        .card-text {
+            text-align: center;
+        }
+
+        .team-text {
+            margin: 20px auto 20px auto;
+        }
+
+        .card-title {
+            color: white;
+            text-align: center;
+            background-color: dimgrey;
+        }
+
+        .teamintro {
+            margin-bottom: 50px;
+        }
+
+        /* 여기까지는 이은비 */
+
+        /* 아래는 이현경님 */
+
+        .title {
+            padding: 30px;
+        }
+
+        .name {
+            margin: auto;
+
+        }
+
+        .card {
+            border-color: white;
+        }
+
+        .click_img {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+
+        }
+
+        /* 아래는 김희석님 : guset book*/
+
+
+        /* 여기까지 김희석님  */
+    </style>
+    <script type="text/javascript">
+        function profile() {
+            popupWindow = window.open();
+            popupWindow.resizeTo(430, 660);
+            popupWindow.onresize = (_ => {
+                popupWindow.resizeTo(430, 660);
+            })
+        }
+
+
+        function getButton() {
+            fetch("/test").then(res => res.json()).then(data => {
+                alert(data['msg'])
+            })
+        }
+
+        function postButton() {
+            let formData = new FormData();
+            formData.append("title_give", "블랙팬서");
+
+            fetch("/test", { method: "POST", body: formData }).then(res => res.json()).then(data => {
+                alert(data['msg'])
+            })
+        }
+    </script>
+  <script>
     $(document).ready(function () {
         show_comment();
       });
@@ -62,14 +236,131 @@
 				})
       }
 </script>
+</head>
 
 <body>
-    
+    <div class="wrap">
+        <div id="main_banner">
+            <div>
+                <div>
+                    <h1 id="main_title">
+                        <p>E 1 I 4</p>
+                    </h1>
+
+                </div>
+                <div>
+                    <h1>
+                        <p> &nbsp;</p>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div id="nav">
+            <ol>
+                <li>E1I4 Intro</li>
+                <li>Member</li>
+                <li>Design_Empty</li>
+                <li>Guest Book</li>
+            </ol>
+        </div>
+
+        <div class="teamtitle">
+            <h2>팀 소개</h2>
+        </div>
+        <div class="teamintro" style="align-items: center">
+            <div class="card-header">안녕하세요!</div>
+            <div class="card-body">
+                <h5 class="card-text">저희는 외향인 1명과 내향인 4명으로 구성된 E1I4 입니다!</h5>
+            </div>
+        </div>
+        <div class="teaminfo">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">TMI / 우리팀의 특징</h5>
+                            <img src="/static/image/Frame 6.png" class="card-img-top" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">궁극적인 목표</h5>
+                            <P></P>
+                            <p class="card-text">✔ 내일배움캠프 다함께 수료</p>
+                            <p class="card-text"> ✔ 멋진 개발자 되기!!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">우리팀의 규칙</h5>
+                            <P></P>
+                            <p class="card-text">✔ 8시 50분까지는 꼭! 접속해서 그 날 공부내용 체크</p>
+                            <p class="card-text"> ✔ 막히는 부분이 있다면 혼자 머리싸매지 말고 팀원과 같이 해결!</p>
+                            <p class="card-text"> ✔ 13-14시 점심 시간, 19-20시 저녁 시간</p>
+                            <p class="card-text"> ✔ 20시 30분 Git Merge 후 피드백하기</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
+        <div class="title">
+            <h2>MEMBER</h2>
+        </div>
+        <div class="member">
+            <div class="row row-cols-1 row-cols-md-5 g-2">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="click_img" alt="...">
+                        <div class="name">
+                            <h3>김희석</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512" class="click_img alt=" ..." onclick="profile()">
+                        <div class="name">
+                            <h3>이은비</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="click_img" alt="..." onclick="profile()">
+                        <div class="name">
+                            <h3>이현경</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="click_img" alt="..." onclick="profile()">
+                        <div class="name">
+                            <h3>김장원</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="click_img" alt="..." onclick="profile()">
+                        <div class="name">
+                            <h3>임수영</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-
+        <div>
+            <button onclick="location.href='/myprofile/new'">상세페이지</button>
+        </div>
+           
     <div class="mypic">
         <h1>GUEST BOOK</h1>
       </div>
@@ -114,6 +405,7 @@
             </blockquote>
           </div>
         </div>
-      </div>
+      </div>                                                    
+    </div>
 </body>
 </html>
