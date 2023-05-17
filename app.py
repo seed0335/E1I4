@@ -14,6 +14,10 @@ def post_profile():
 
     return render_template('sub.html')
 
+@app.route('/sub')
+def sub():
+    return render_template('sub.html')
+
 @app.route('/test', methods=['GET'])
 def test_get():
    title_receive = request.args.get('title_give')
