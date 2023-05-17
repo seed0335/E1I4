@@ -14,19 +14,20 @@ def home():
 
 @app.route('/guestbook', methods=['POST'])
 def guestbook_post():
-   name_receive = request.form('name_give')
+   name_receive = request.form['name_give']
    comment_receive = request.form['comment_give']
    doc = {
        'name'  :name_receive,
        'comment' : comment_receive
    }
-   db.fan.insert_one(doc)
+   db.guestbook_comments.insert_one(doc)
    return jsonify({'msg': '방명록이 등록되었습니다!'})
 
 @app.route("/guestbook", methods=["GET"])
 def guestbook_get():
-    all_comments = list(db.fan.find({},{'_id':False}))
+    all_comments = list(db.guestbook_comments.find({},{'_id':False}))
     #db.user.find 에서 users 바꿔야한다 일단 강의대로 fan으로 저장함
+    #fan -> guestbool_comments 로 변경
     return jsonify({'result': all_comments})
 
 if __name__ == '__main__':
