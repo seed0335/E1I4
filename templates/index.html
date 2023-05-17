@@ -26,12 +26,12 @@
     <title>Member</title>
 
     <style>
-            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
-    * {
-        font-family: 'Noto Sans KR', sans-serif;
-    }
-        
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
         .wrap {
             /* 웹종반 1-9 강의 참고 */
             text-align: center;
@@ -190,33 +190,35 @@
                 alert(data['msg'])
             })
         }
-    </script>
-  <script>
-    $(document).ready(function () {
-        show_comment();
-      });
-      
-      function save_comment() {
-        let name = $('#name').val()
-        let comment = $('#comment').val()
 
-        let formData = new FormData();
-        formData.append("name_give", name);
-        formData.append("comment_give", comment);
 
-        fetch('/guestbook', {method: "POST",body: formData,}).then((res) => res.json()).then((data) => {
-            alert(data["msg"]);
-            window.location.reload()
-          });
-      }
-      function show_comment() {
-        fetch('/guestbook').then((res) => res.json()).then((data) => {
-            let rows = data['result']
-            $('#comment-list').empty()
-            rows.forEach((a)=>{
-                let name = a['name']
-                let comment = a['comment']
-                let temp_html = `<div class="card">
+        function save_comment() {
+            let name = $('#name').val()
+            let comment = $('#comment').val()
+
+            let formData = new FormData();
+            formData.append("name_give", name);
+            formData.append("comment_give", comment);
+
+            fetch('/guestbook', { method: "POST", body: formData, }).then((res) => res.json()).then((data) => {
+                alert(data["msg"]);
+                window.location.reload()
+            });
+        }
+
+
+        $(document).ready(function () {
+            show_comment();
+        });
+
+        function show_comment() {
+            fetch('/guestbook').then((res) => res.json()).then((data) => {
+                let rows = data['result']
+                $('#comment-list').empty()
+                rows.forEach((a) => {
+                    let name = a['name']
+                    let comment = a['comment']
+                    let temp_html = `<div class="card">
                               <div class="card-body">
                                 <blockquote class="blockquote mb-0">
                                   <div style="width:100px; height:70px; border:1px solid grey; float:left;">
@@ -228,14 +230,12 @@
                                 </blockquote>
                               </div>
                             </div>`
-                $('#comment-list').append(temp_html)
-            })
-            
+                    $('#comment-list').append(temp_html)
+                })
 
-        
-				})
-      }
-</script>
+            })
+        }
+    </script>
 </head>
 
 <body>
@@ -250,8 +250,9 @@
                 </div>
                 <div>
                     <h1>
-                        <p> &nbsp;</p>
+                        <p> &nbsp&nbsp;</p>
                     </h1>
+
                 </div>
             </div>
         </div>
@@ -316,7 +317,8 @@
             <div class="row row-cols-1 row-cols-md-5 g-2">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="click_img" alt="...">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="click_img"
+                            alt="...">
                         <div class="name">
                             <h3>김희석</h3>
                         </div>
@@ -324,7 +326,8 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512" class="click_img alt=" ..." onclick="profile()">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512"
+                            class="click_img alt=" ..." onclick="profile()">
                         <div class="name">
                             <h3>이은비</h3>
                         </div>
@@ -332,7 +335,8 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="click_img" alt="..." onclick="profile()">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="click_img"
+                            alt="..." onclick="profile()">
                         <div class="name">
                             <h3>이현경</h3>
                         </div>
@@ -340,7 +344,8 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="click_img" alt="..." onclick="profile()">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="click_img"
+                            alt="..." onclick="profile()">
                         <div class="name">
                             <h3>김장원</h3>
                         </div>
@@ -348,7 +353,8 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="click_img" alt="..." onclick="profile()">
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="click_img"
+                            alt="..." onclick="profile()">
                         <div class="name">
                             <h3>임수영</h3>
                         </div>
@@ -360,52 +366,48 @@
         <div>
             <button onclick="location.href='/myprofile/new'">상세페이지</button>
         </div>
-           
-    <div class="mypic">
-        <h1>GUEST BOOK</h1>
-      </div>
-      <div class="mypost">
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="name" placeholder="닉네임" />
+
+        <div class="mypic">
+            <h1>GUEST BOOK</h1>
         </div>
-        <div class="form-floating">
-          <textarea
-            class="form-control"
-            placeholder="방명록을 작성하세요"
-            id="comment"
-            style="height: 100px"
-          ></textarea>
+        <div class="mypost">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="닉네임" />
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="방명록을 작성하세요" id="comment" style="height: 100px"></textarea>
+            </div>
+            <button onclick="save_comment()" type="button" class="btn btn-dark">
+                댓글 남기기
+            </button>
         </div>
-        <button onclick="save_comment()" type="button" class="btn btn-dark">
-          댓글 남기기
-        </button>
-      </div>
-      <div class="mycards" id="comment-list">
-        <div class="card">
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p>새로운 앨범 너무 멋져요!</p>
-              <footer class="blockquote-footer">호빵맨</footer>
-            </blockquote>
-          </div>
+        <div class="mycards" id="comment-list">
+            <div class="card">
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>새로운 앨범 너무 멋져요!</p>
+                        <footer class="blockquote-footer">호빵맨</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>새로운 앨범 너무 멋져요!</p>
+                        <footer class="blockquote-footer">호빵맨</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>새로운 앨범 너무 멋져요!</p>
+                        <footer class="blockquote-footer">호빵맨</footer>
+                    </blockquote>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p>새로운 앨범 너무 멋져요!</p>
-              <footer class="blockquote-footer">호빵맨</footer>
-            </blockquote>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
-              <p>새로운 앨범 너무 멋져요!</p>
-              <footer class="blockquote-footer">호빵맨</footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>                                                    
     </div>
 </body>
+
 </html>
