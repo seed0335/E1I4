@@ -2,8 +2,12 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 # mongoDB는 김장원 - 본인 mongoDB로 변경하기
+import certifi
+ca = certifi.where()
+print("1")
+
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://sparta:test@cluster0.txlb0px.mongodb.net/?retryWrites=true&w=majority',tlsCAFile =ca)
 db = client.dbsparta
 
 @app.route('/')
@@ -48,4 +52,4 @@ def guestbook_get():
 
 # mac 사용자는 포트5001로 변경하세요.
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=5001, debug=True)
