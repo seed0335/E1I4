@@ -1,29 +1,15 @@
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
+# mongoDB는 김장원 - 본인 mongoDB로 변경하기
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
+
+client = MongoClient('mongodb+srv://sparta:test@cluster0.ziorpfn.mongodb.net/?retryWrites=true&w=majority')
 db = client.dbsparta
 
 @app.route('/')
 def home():
     return render_template('index.html')
-
-
-@app.route('/guestbook', methods=['POST'])
-def guestbook_post():
-    name_receive = request.form['name_give']
-    comment_receive = request.form['comment_give']
-    doc = {
-        'name'  :name_receive,
-        'comment' : comment_receive
-    }
-    db.guestbook_comments.insert_one(doc)
-    return jsonify({'msg': '방명록이 등록되었습니다!'})
-
-@app.route("/")
-def h1():
-    return render_template('img_static.html')
 
 @app.route("/myprofile/new", methods=["GET"])
 def post_profile():
@@ -47,6 +33,19 @@ def test_get():
     return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
 
 
+# 방명록 저장하는 곳
+@app.route('/guestbook', methods=['POST'])
+def guestbook_post():
+   name_receive = request.form['name_give']
+   comment_receive = request.form['comment_give']
+   doc = {
+       'name'  :name_receive,
+       'comment' : comment_receive
+   }
+   db.guestbook_comments.insert_one(doc)
+   return jsonify({'msg': '방명록이 등록되었습니다!'})
+
+# 방명록 mongDB에서 index.html로 데이터 전송
 @app.route("/guestbook", methods=["GET"])
 def guestbook_get():
     all_comments = list(db.guestbook_comments.find({},{'_id':False}))
@@ -54,5 +53,6 @@ def guestbook_get():
     #fan -> guestbool_comments 로 변경
     return jsonify({'result': all_comments})
 
+# mac 사용자는 포트5001로 변경하세요.
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
