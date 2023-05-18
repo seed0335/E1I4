@@ -23,8 +23,8 @@ from pymongo import MongoClient
 # # 이현경mongoDB
 # client = MongoClient('')
 # 임수영mongoDB
-client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
-db = client.dbsparta
+# client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
+# db = client.dbsparta
 
 @app.route('/')
 def home():
