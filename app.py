@@ -1,5 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
+from bson.objectid import ObjectId
+import requests
+import bs4
+import logging
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 
 from pymongo import MongoClient
 client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
@@ -25,16 +31,16 @@ def guestbook_post():
 def h1():
     return render_template('img_static.html')
 
-@app.route("/myprofile/new", methods=["GET"])
-def post_profile():
-
-    return render_template('sub.html')
-
 @app.route("/myprofile/new1", methods=["GET"])
 def profiles_get():
-    all_profiles = list(db.profiles.find({}, {'_id': False}))
-
+    all_profiles = db.profiles.find_one({"_id": ObjectId(id)})
+    
     return jsonify({'result': all_profiles})
+
+@app.route("/myprofile/new", methods=["GET"])
+def post_profile():
+    
+    return render_template('sub.html', member_id = id)
 
 @app.route('/sub')
 def sub():
