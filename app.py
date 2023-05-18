@@ -35,19 +35,22 @@ def home():
 # 임수영님 서브 페이지 동작 관련 코드
 @app.route("/myprofile/new", methods=["GET"])
 def post_profile():
-    
     return render_template('sub.html', member_id = id)
 
 @app.route('/sub')
 def sub():
     return render_template('sub.html')
 
-@app.route('/test', methods=['GET'])
-def test_get():
-    title_receive = request.args.get('title_give')
-    print(title_receive)
-    return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
+@app.route('/sub4')
+def sub4():
+    return render_template('sub4.html')
 
+# 김장원
+# B : 데이터 보내기
+@app.route("/subA4", methods=["GET"])
+def subA4():
+    profiles_data = list(db.profiles.find({'name':"김장원"},{'_id':False}))
+    return jsonify({'result': profiles_data})
 
 
 # 방명록 저장하는 곳(김희석)
