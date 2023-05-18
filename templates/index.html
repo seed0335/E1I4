@@ -43,6 +43,7 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
 
+        /* -------------------------------------- 시작 : 김장원 -------------------------------------- */
         /* 전체 바디 사이즈 1320px */
         .wrap {
             /* 웹종반 1-9 강의 참고 */
@@ -50,224 +51,320 @@
             flex-direction: column;
             align-items: center;
             width: 1320px;
-            height: 7000px;
+            height: auto;
             /* 나중에 값 변경할 것 */
             margin: 0px auto 0px auto;
             text-align: center;
         }
 
-            /* -------------------------------------- 여기까지 김장원 -------------------------------------- */
-            /* 메인 배너 전체 사이즈와 정렬 */
-            #main_banner {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+        /* 메인 배너 전체 사이즈와 정렬 */
+        #main_banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-                width: 1320px;
-                height: 300px;
+            width: 1320px;
+            height: 300px;
+        }
+
+        /* 메인 타이틀 글자 설정 */
+        #main_title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 120px;
+            /* font-weight: bold; */
+            letter-spacing: 4px;
+
+            font-family: 'Rampart One', cursive;
+            color: black;
+            /* text-shadow: -1px 0 #000, 0 2.5px #000, 1.5px 0 #000, 0 -1px #000; */
+        }
+
+        /* 네비게이션바 크기, 색*/
+        #nav {
+            width: 1320px;
+            height: 50px;
+            background-color: #FF9494;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        #nav>ol {
+            display: flex;
+            flex-direction: row;
+            margin-right: 40px;
+        }
+
+        #nav>ol>li {
+            display: flex;
+            flex-direction: row;
+            margin: 0px 53px 0px 53px;
+            list-style: none;
+            font-size: 28px;
+        }
+
+        #nav>ol>li>a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #nav>ol>li>a:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* 백설이 탑으로 가는 버튼 */
+        #top100 {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            z-index: 10;
+            display: flex;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            width: 10px;
+            height: 10px;
+            border: 1px solid black;
+
+            z-index: 10;
+
+            display: flex;
+            position: fixed;
+            bottom: 110px;
+            right: 200px;
+
+            border: 0px;
+        }
+
+        #top100>img {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+        }
+
+        #top100>p {
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        #top1 {
+            text-decoration: none;
+            color: black;
+        }
+
+        #top1>a:hover {
+            color: black;
+        }
+
+        /* 백설이 애니메이션 관련코드(코딩네컷 완주보상) */
+        @keyframes rtanee {
+            0% {
+                bottom: 0px;
             }
 
-            /* 메인 타이틀 글자 설정 */
-            #main_title {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-
-                font-size: 120px;
-                /* font-weight: bold; */
-                letter-spacing: 4px;
-
-                font-family: 'Rampart One', cursive;
-                color: black;
-                /* text-shadow: -1px 0 #000, 0 2.5px #000, 1.5px 0 #000, 0 -1px #000; */
+            100% {
+                bottom: 100px;
             }
+        }
 
-            /* 네비게이션바 크기, 색*/
-            #nav {
-                width: 1320px;
-                height: 50px;
-                background-color: #FF9494;
-
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                padding-top: 15px;
-            }
-
-            #nav>ol {
-                display: flex;
-                flex-direction: row;
-                margin-right: 40px;
-            }
-
-            #nav>ol>li {
-                display: flex;
-                flex-direction: row;
-                margin: 0px 53px 0px 53px;
-                list-style: none;
-                font-size: 28px;
-            }
-
-            #nav>ol>li>a {
-                color: white;
-                text-decoration: none;
-            }
-
-            #nav>ol>li>a:hover {
-                text-decoration: none;
-                color: black;
-            }
-
-            /* 백설이 탑으로 가는 버튼 */
-            #top100 {
-                width: 50px;
-                height: 50px;
-                border: 1px solid black;
-                z-index: 10;
-                display: flex;
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                width: 10px;
-                height: 10px;
-                border: 1px solid black;
-
-                z-index: 10;
-
-                display: flex;
-                position: fixed;
-                bottom: 110px;
-                right: 200px;
-
-                border: 0px;
-            }
-
-            #top100>img {
-                width: 100px;
-                height: 100px;
-                border-radius: 15px;
-            }
-
-            #top100>p {
-                font-size: 20px;
-                text-decoration: none;
-            }
-
-            #top1 {
-                text-decoration: none;
-                color: black;
-            }
-
-            #top1>a:hover {
-                color: black;
-            }
-
-            /* 백설이 애니메이션 관련코드(코딩네컷 완주보상) */
-            @keyframes rtanee {
-                0% {
-                    bottom: 0px;
-                }
-
-                100% {
-                    bottom: 100px;
-                }
-            }
-
-            .white {
-                position: fixed;
-                /* right: 10px;
+        .white {
+            position: fixed;
+            /* right: 10px;
         bottom: 10px; */
 
-                /* 아이콘 이동 애니메이션 관련 설정 */
-                animation-name: rtanee;
-                animation-duration: 2s;
-                animation-duration: linear;
-                animation-iteration-count: infinite;
-                animation-direction: alternate;
-                animation-fill-mode: forwards;
-            }
+            /* 아이콘 이동 애니메이션 관련 설정 */
+            animation-name: rtanee;
+            animation-duration: 2s;
+            animation-duration: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+        }
 
-            .white {
-                width: 150px;
-                cursor: pointer;
-            }
+        .white {
+            width: 150px;
+            cursor: pointer;
+        }
 
-            /* -------------------------------------- 여기까지 김장원 -------------------------------------- */
+        /* -------------------------------------- 끝 : 김장원 -------------------------------------- */
 
-            /* -------------------------------------- 아래는 이은비 -------------------------------------- */
-            .teamtitle {
-                text-align: center;
-            }
+        /* -------------------------------------- 시작 : 이은비 -------------------------------------- */
+        .team-body {
+            box-sizing: border-box;
+            width: 920px;
+            height: 209px;
+            border: 2px solid #000000;
+            margin: auto;
 
-            .team-body {
-                background-color: grey;
-                width: 300px;
-                height: 100px;
-                margin: 20px auto 80px auto;
-            }
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
 
-            .card-header {
-                font-size: x-large;
-                text-align: center;
-            }
+            padding-top: 10px;
+        }
 
-            .card-text {
-                text-align: center;
-            }
+        #imoji {
+            font-size: 40px
+        }
 
-            .team-text {
-                margin: 20px auto 20px auto;
-            }
+        .card-title {
+            margin: 150px auto 30px auto;
+        }
 
-            .card-title {
-                color: white;
-                text-align: center;
-                background-color: dimgrey;
-            }
+        .card-body {
+            width: 400px;
+            background-color: #FFF5E4;
+            height: 467px;
+            left: 760px;
+            top: 1086px;
 
-            .teamintro {
-                margin-top: 0px;
-                margin-bottom: 20px;
-            }
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
 
-            /* -------------------------------------- 여기까지는 이은비 -------------------------------------- */
+            line-height: 150%;
+            text-align: left;
+        }
 
-            /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
-            .title {
-                padding: 30px;
-            }
+        /* -------------------------------------- 끝 : 이은비 -------------------------------------- */
 
-            .name {
-                margin: auto;
-            }
+        #h150 {
+            height: 300px;
+        }
 
-            .card {
-                border-color: white;
-            }
+        /* -------------------------------------- 시작 : 이현경님 -------------------------------------- */
+        .title {
+            padding: 30px;
+        }
 
-            .img {
-                width: 200px;
-                height: 200px;
-                border-radius: 100%;
-            }
+        .name {
+            margin: auto;
+        }
 
-            /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
+        .card {
+            border-color: white;
+        }
+
+        .img {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+        }
+
+        /* -------------------------------------- 끝 이현경님 -------------------------------------- */
+
+        /* -------------------------------------- 시작 이현경님 -------------------------------------- */
+        /* 방명록 작성 */
+        .formA {
+            width: 1280px;
+            height: 640px;
+            background: #FFE3E1;
+            text-align: left;
+            padding: 60px 50px 50px 50px;
+            margin-right: 70px;
+            margin-left: 70px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        #inputbutton {
+            background-color: white;
+            border: 0.5px solid gainsboro;
+            height: 60px;
+            margin-left: 1000px;
+            margin-top: 0px;
+        }
+
+        #name {
+            width: 300px;
+            height: 40px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid white;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 16px;
+            resize: none;
+        }
+
+        form {
+            margin-left: 20px;
+        }
+
+        /* 방명록 출력 부분 */
+
+        #comment-list {
+            background-color: #FFE3E1;
+            height: 200px;
+        }
+
+        .commentlist {
+            width: 1280px;
+            height: 150px;
+            display: flex;
+            flex-direction: row;
+            background: #FFE3E1;
+            padding-top: 0px 70px 0px 70px;
+            
+            
+        }
+
+        .commentname {
+            background-color: white;
+            width: 194px;
+            height: 100px;
+            margin: 5px 30px 5px 30px;
+            overflow: scroll;
+        }
+
+        .commentname>p {
+            padding: 40px;
+        }
+
+        .comment {
+            background-color: white;
+            margin: 5px 30px 5px 0px;
+            height: 100px;
+            width: 980px;
+            overflow: scroll;
+        }
+
+        .comment>p {
+            text-align: left;
+            padding: 40px 0px 0px 40px;
+            color: #FF9494;
+        }
     </style>
 
     <script>
-
         /* -------------------------------------- 아래는 김희석님 : guset book --------------------------------------*/
         function save_comment() {
             let name = $('#name').val()
-            let comment = $('#comment').val()
+            let comment = $('textarea').val()
 
             let formData = new FormData();
             formData.append("name_give", name);
@@ -286,22 +383,14 @@
         function show_comment() {
             fetch('/guestbook').then((res) => res.json()).then((data) => {
                 let rows = data['result']
-                $('#comment-list').empty()
                 rows.forEach((a) => {
                     let name = a['name']
                     let comment = a['comment']
-                    let temp_html = `<div class="card">
-                              <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                  <div style="width:100px; height:70px; border:1px solid grey; float:left;">
-                                  ${comment}
-                                  </div>
-                                  <div style="width:150px; height:70px; border:1px solid grey; float:right;">
-                                  <footer class="blockquote-footer">${name}</footer>
-                                  </div>
-                                </blockquote>
-                              </div>
-                            </div>`
+                    let temp_html = `
+                                    <div class="commentlist" id ="linetest">
+                                    <div class="commentname"><p>${name}</p></div>
+                                    <div class="comment"><p>${comment}</p></div>
+                                    </div>`
                     $('#comment-list').append(temp_html)
                 })
 
@@ -316,7 +405,7 @@
     <div class="wrap" id="top1">
         <div id="main_banner">
             <div>
-                <div>
+                <div id="bookmarkA">
                     <h1 id="main_title">
                         <p>E1I4</p>
                     </h1>
@@ -333,16 +422,16 @@
         </div>
         <a href="#top1" id="top1">
             <div id="top100">
-                <p>TOP</p>
                 <img src="\static\image\백설.png" class="white">
+                <p>TOP</p>
             </div>
         </a>
         <!-- 김장원 끝-->
 
         <!-- 이은비 시작-->
         <div class="teamintro">
-            <img src="/static/image/title1_2.png"> <!-- style = "margin : 109px 200px auto 200px;" -->
-            <div class="team-body" id="bookmarkA">
+            <img src="/static/image/title1_2.png" style="margin: 109px 200px auto 200px">
+            <div class="team-body">
                 <p>안녕하세요
                     <br>저희는 E 1명과 I 4명으로 구성된 화목한 5남매(+1) 입니다
                 <p id="imoji">🙋🏻‍♂️🧚🏻‍♂️👩🏻🐶👩🏻‍🦰👰🏻‍♀️</p>
@@ -355,44 +444,44 @@
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100">
+                        <h2 class="card-title">TMI / 우리팀의 특징</h2>
                         <div class="card-body">
-                            <h5 class="card-title">TMI / 우리팀의 특징</h5>
-                            <img src="/static/image/e1i4.png" class="card-img-top" alt="...">
+                            <img src="/static/image/Frame 2.jpg" class="card-img-top" alt="...">
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
+                        <h2 class="card-title">궁극적인 목표</h2>
                         <div class="card-body">
-                            <h5 class="card-title">궁극적인 목표</h5>
-                            <P></P>
-                            <p class="card-text"> ✔ Git 사용법 숙지</p>
-                            <p class="card-text"> ✔ 내일배움캠프 포기하지 않고 끝까지 수료하기!</p>
-                            <p class="card-text"> ✔ 프론트와 백의 연결관계 이해하기</p>
-                            <p class="card-text"> ✔ POST, GET 사용법 마스터하기</p>
-                            <p class="card-text"> ✔ ch1 미니 project 구조 정확히 이해하고 만들기</p>
+                            <br> ✔ Git 사용법 숙지하기
+                            <br> ✔ 내일배움캠프 포기하지 않고 끝까지 수료하기!
+                            <br> ✔ 프론트와 백의 연결관계 이해하기
+                            <br> ✔ POST, GET 사용법 마스터하기
+                            <br> ✔ ch1 미니 project 구조 정확히 이해하고 만들기
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
+                        <h2 class="card-title">우리팀의 규칙</h2>
                         <div class="card-body">
-                            <h5 class="card-title">우리팀의 규칙</h5>
-                            <P></P>
-                            <p class="card-text"> ✔ 건강이 제일 중요! 밥 세끼 꼬박꼬박 잘 챙겨먹기💕</p>
-                            <p class="card-text"> ✔ 막히는 부분이 있다면 혼자 머리싸매지 말고 팀원과 같이 해결!</p>
-                            <p class="card-text"> ✔ 13-14시 점심 시간, 18-19시 저녁 시간 🐷</p>
-                            <p class="card-text"> ✔ 20시 Git Merge 후 팀원들과 함께 코드리뷰 , 상세 피드백하기</p>
-                            <p class="card-text"> ✔ 20시 40분 개발 일지(TIL) 작성하고 퇴실시간 맞춰 퇴실하기</p>
+                            <br> ✔ 건강이 제일 중요! 밥 세끼 꼬박꼬박 잘 챙겨먹기💕
+                            <br> ✔ 막히는 부분이 있다면 혼자 머리싸매지 말고 팀원과 같이 해결!
+                            <br> ✔ 13-14시 점심 시간, 18-19시 저녁 시간 🐷
+                            <br> ✔ 20시 Git Merge 후 팀원들과 함께 코드리뷰 , 상세 피드백하기
+                            <br> ✔ 20시 40분 개발 일지(TIL) 작성하고 퇴실시간 맞춰 퇴실하기
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- 이은비 끝-->
+        <div style="height: 200px;" id="bookmarkC">
 
+        </div>
         <!-- 이현경 시작-->
-        <div class="title" id="bookmarkC">
+        <div class="title">
             <h2>MEMBER</h2>
         </div>
         <div class="member">
@@ -409,7 +498,7 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <a href={{url_for('sub1')}}>
+                        <a href={{url_for('sub2')}}>
                             <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512" class="img"
                                 alt="..."></a>
                         <br>
@@ -420,7 +509,7 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <a href={{url_for('sub1')}}>
+                        <a href={{url_for('sub3')}}>
                             <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="img"
                                 alt="..."></a>
 
@@ -432,7 +521,7 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <a href={{url_for('sub1')}}>
+                        <a href={{url_for('sub4')}}>
                             <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="img"
                                 alt="..."></a>
                         <br>
@@ -443,7 +532,7 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <a href={{url_for('sub1')}}>
+                        <a href={{url_for('sub5')}}>
                             <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="img"
                                 alt="..."></a>
                         <br>
@@ -456,50 +545,48 @@
         </div>
         <!-- 이현경 -->
 
-        <!-- 아래는 임수영님 상세페이지 이동 버튼 나중에 삭제함 -->
-        <div>
-            <button onclick="location.href='/myprofile/new'">상세페이지</button>
+        <div id="h150">
+            &nbsp;
         </div>
 
         <!-- 김희석님  시작-->
-        <div class="mypic" id="bookmarkD">
-            <h1>GUEST BOOK</h1>
+        <div class="formA" id="bookmarkD">
+            <h2> 방명록 작성 </h2>
+            <br>
+            <form>
+                <label for="name">닉네임</label><br>
+                <input type="text" id="name" value=""><br><br>
+
+                <label for="comment" id="name11">내용을 입력하세요</label><br>
+                <textarea id="name11" value=""></textarea>
+                <input type="button" value="작성완료" onclick="save_comment()" id="inputbutton">
+
+            </form>
         </div>
-        <div class="mypost">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="name" placeholder="닉네임" />
-            </div>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="방명록을 작성하세요" id="comment"></textarea>
-                <!-- style="height: 100px" -->
-            </div>
-            <button onclick="save_comment()" type="button" class="btn btn-dark">
-                댓글 남기기
-            </button>
-        </div>
-        <div class="mycards" id="comment-list">
-            <div class="card">
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>새로운 앨범 너무 멋져요!</p>
-                        <footer class="blockquote-footer">호빵맨</footer>
-                    </blockquote>
+        <br>
+        <br>
+
+        <div id="comment-list">
+            <h2>방명록</h2>
+            <div>
+                <div class="commentlist" id="linetest">
+                    <div class="commentname">
+                        <p>seed0335</p>
+                    </div>
+                    <div class="comment">
+                        <p>모두 수고하셨습니다.</p>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>새로운 앨범 너무 멋져요!</p>
-                        <footer class="blockquote-footer">호빵맨</footer>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>새로운 앨범 너무 멋져요!</p>
-                        <footer class="blockquote-footer">호빵맨</footer>
-                    </blockquote>
+
+            <div>
+                <div class="commentlist" id="linetest">
+                    <div class="commentname">
+                        <p>kind0132</p>
+                    </div>
+                    <div class="comment">
+                        <p>짧은 시간 동안 멋진 결과물을 만들었군요.</p>
+                    </div>
                 </div>
             </div>
         </div>

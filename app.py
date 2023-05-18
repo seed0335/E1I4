@@ -8,13 +8,13 @@ app = Flask(__name__)
 # mongoDB는 김장원 - 본인 mongoDB로 변경하기
 from pymongo import MongoClient
 # 김장원mongoDB
-# client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
 # 김희석mongoDB
-# client = MongoClient('')
+# client = MongoClient('mongodb+srv://sparta:test@cluster0.txlb0px.mongodb.net/?retryWrites=true&w=majority',tlsCAFile =ca')
 # 이은비mongoDB
-# client = MongoClient('')
+# client = MongoClient('mongodb+srv://sparta:test@cluster0.ziorpfn.mongodb.net/?retryWrites=true&w=majority',tlsCAFile = ca')
 # 이현경mongoDB
-client = MongoClient('')
+# client = MongoClient('mongodb+srv://sparta:test@cluster0.w1iiuru.mongodb.net/?retryWrites=true&w=majority')
 # 임수영mongoDB
 # client = MongoClient('')
 db = client.dbsparta
@@ -30,20 +30,60 @@ def post_profile():
 
 @app.route('/sub1')
 def sub1():
-    return render_template('sub.html')
+    return render_template('sub1.html')
+
+@app.route('/sub2')
+def sub2():
+    return render_template('sub2.html')
+
+@app.route('/sub3')
+def sub3():
+    return render_template('sub3.html')
 
 @app.route('/sub4')
 def sub4():
     return render_template('sub4.html')
 
-# 김장원
-# B : 데이터 보내기
+@app.route('/sub5')
+def sub5():
+    return render_template('sub5.html')
+
+# 1김희석
+# 데이터 보내기
+@app.route("/subA1", methods=["GET"])
+def subA1():
+    profiles_data = list(db.profiles.find({'name':"김희석"},{'_id':False}))
+    return jsonify({'result': profiles_data})
+
+# 2이은비
+# 데이터 보내기
+@app.route("/subA2", methods=["GET"])
+def subA2():
+    profiles_data = list(db.profiles.find({'name':"이은비"},{'_id':False}))
+    return jsonify({'result': profiles_data})
+
+# 3이현경
+# 데이터 보내기
+@app.route("/subA3", methods=["GET"])
+def subA3():
+    profiles_data = list(db.profiles.find({'name':"이현경"},{'_id':False}))
+    return jsonify({'result': profiles_data})
+
+# 4김장원
+# 데이터 보내기
 @app.route("/subA4", methods=["GET"])
 def subA4():
     profiles_data = list(db.profiles.find({'name':"김장원"},{'_id':False}))
     return jsonify({'result': profiles_data})
 
+# 5임수영
+# 데이터 보내기
+@app.route("/subA5", methods=["GET"])
+def subA5():
+    profiles_data = list(db.profiles.find({'name':"임수영"},{'_id':False}))
+    return jsonify({'result': profiles_data})
 
+# 김희석 -----------------------------------------------------------------
 # 방명록 저장하는 곳(김희석)
 @app.route('/guestbook', methods=['POST'])
 def guestbook_post():

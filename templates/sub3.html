@@ -73,11 +73,13 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 50px;
             background-size: cover;
-            background-image: url('https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512');
+            background-image: url('https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512');
             background-repeat: no-repeat;
             background-position: center; 
         }
+        {
 
+        }
 
         .address {
             position: absolute;
@@ -233,9 +235,8 @@
             show_profiles();
         });
         function show_profiles() {
-            fetch('subA4').then(res => res.json()).then(data => {
+            fetch('subA3').then(res => res.json()).then(data => {
                 let rows = data['result']
-                console.log(rows)
                 $('#container').empty();
                 rows.forEach((a) => {
                     let imoge = a['imoge']

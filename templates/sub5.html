@@ -72,12 +72,10 @@
             top: 29px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 50px;
-            background-size: cover;
-            background-image: url('https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512');
+            background-image: url('https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512');
             background-repeat: no-repeat;
             background-position: center; 
         }
-
 
         .address {
             position: absolute;
@@ -228,16 +226,15 @@
             });
         });
 
-
         $(document).ready(function () {
             show_profiles();
         });
         function show_profiles() {
-            fetch('subA4').then(res => res.json()).then(data => {
+            fetch('subA5').then(res => res.json()).then(data => {
                 let rows = data['result']
                 console.log(rows)
                 $('#container').empty();
-                rows.forEach((a) => {
+                rows.forEach((a) => {  
                     let imoge = a['imoge']
                     let blog1 = a['blog1']
                     let blog2 = a['blog2']
@@ -292,7 +289,6 @@
                 })
             })
         }
-
     </script>
 </head>
 
@@ -305,9 +301,9 @@
         <!-- 사진은 .photo에서 백그라운드 값 바꾸시면 돼요 -->
         <div class="photo"></div> 
         <!-- 주소는 하이퍼링크 입니다 -->
-        <a class="address" href="https://velog.io/@hoy503007">www.naver.com</a>
+        <a class="address" href="https://velog.io/@hoy503007">https://velog.io/@hoy503007</a>
         <div>
-            <text class="name">홍길동</text>
+            <text class="name">임수영</text>
         </div>
         <div id="test" class="about_me_area">
             <text class="about_me_text">자기소개</text>
@@ -324,18 +320,18 @@
                 <details>
                     <summary>자신의 장점</summary>
                     <li>끈기가 있다.</li>
-                    <li>성실해요 </li>
+                    <li>같은 화면을 계속 봐도 지루해 하지 않음(코딩특화)</li>
                 </details>
 
                 <details>
                     <summary>나의 MBTI</summary>
-                    <li>AAAA</li>
+                    <li>ISTP</li>
                 </details>
 
                 <details>
                     <summary>TMI</summary>
-                    <li></li>
-                    <li></li>
+                    <li>강아지를 키우고 있습니다.</li>
+                    <li>회의할 때마다 짖어대서 팀원분들께 너무 죄송...</li>
                 </details>
             </div>
         </div>
