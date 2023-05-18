@@ -7,14 +7,14 @@
 # db = client.dbsparta
 
 # doc = {
-#     'name':'name a',
-#     'about_me':'about_me a',
+#     'name':'이은비',
+#     'about_me':'https://velog.io/@owiiwo',
 #     'photo':'photo a',
-#     'imoge':'imoge a',
-#     'Q1':'Q1 a',
-#     'Q2':'Q2 a',
-#     'Q3':'Q3 a',
-#     'Q4':'Q4 a',
+#     'imoge':'🍜',
+#     'Q1':'HTML, JavaScript, CSS, Python(flask)',
+#     'Q2':'밝고 긍정적이다!',
+#     'Q3':'ISTJ',
+#     'Q4':'컵누들을 좋아합니다😍',
 # }
 # db.profiles.insert_one(doc) 
 

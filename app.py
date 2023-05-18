@@ -11,9 +11,9 @@ from pymongo import MongoClient
 client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
 # 김희석mongoDB
 # client = MongoClient('')
-# 이은비mongoDB
-# client = MongoClient('')
-# 이현경mongoDB
+# # 이은비mongoDB
+# client = MongoClient('mongodb+srv://sparta:test@cluster0.ziorpfn.mongodb.net/?retryWrites=true&w=majority',tlsCAFile = ca)
+# # 이현경mongoDB
 # client = MongoClient('')
 # 임수영mongoDB
 # client = MongoClient('')
@@ -68,4 +68,4 @@ def guestbook_get():
 
 # mac 사용자는 포트5001로 변경하세요.
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=5001, debug=True)
