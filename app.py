@@ -14,7 +14,7 @@ from pymongo import MongoClient
 # 이은비mongoDB
 # client = MongoClient('')
 # 이현경mongoDB
-client = MongoClient('mongodb+srv://sparta:test@cluster0.w1iiuru.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('')
 # 임수영mongoDB
 # client = MongoClient('')
 db = client.dbsparta
@@ -28,8 +28,8 @@ def home():
 def post_profile():
     return render_template('sub.html', member_id = id)
 
-@app.route('/sub')
-def sub():
+@app.route('/sub1')
+def sub1():
     return render_template('sub.html')
 
 @app.route('/sub4')
