@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -42,63 +42,40 @@
 
         .container {
             position: absolute;
-            width: 1320px;
-            margin: 0px auto 0px auto;
+            width: 1140px;
             height: 890px;
-
+            left: 390px;
+            top: 29px;
         }
 
         .imoge {
             position: absolute;
             width: 49px;
             height: 41px;
-            left: 835px;
-            top: 37px;
+            left: 523px;
+            top: 151px;
 
             font-family: 'Inter';
             font-style: normal;
             font-weight: 400;
-            font-size: 40px;
+            font-size: 70px;
             line-height: 85px;
             /* background-color: red; */
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
         }
 
         .photo {
+            box-sizing: border-box;
             position: absolute;
-            width: 213px;
-            height: 219px;
-            left: 527px;
-            top: 29px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: 293px;
+            height: 283px;
+            left: 523px;
+            top: 248px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
             border-radius: 50px;
             background-image: url('https://cdn.pixabay.com/photo/2023/04/03/03/20/plant-7895897_1280.jpg');
             background-repeat: no-repeat;
             background-position: center;
-        }
-
-        .address {
-            position: absolute;
-            left: 527px;
-            top: 250px;
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 567;
-            font-size: 20px;
-            line-height: 56px;
-        }
-
-        a:link {
-            color: black;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: black;
-        }
-
-        a:hover {
-            color: red;
         }
 
         .name {
@@ -106,7 +83,7 @@
             width: 250px;
             height: 77px;
             left: 890px;
-            top: 50px;
+            top: 296px;
             font-family: 'Inter';
             font-weight: 600;
             font-size: 60px;
@@ -118,27 +95,25 @@
             width: 288px;
             height: 158px;
             left: 905px;
-            top: 130px;
+            top: 373px;
             background: transparent;
         }
 
         .about_me_text {
             font-style: normal;
             font-weight: 400;
-            font-size: 25px;
+            font-size: 16px;
             line-height: 20px;
         }
 
         #tmi_area {
-            box-sizing: border-box;
             position: absolute;
-            width: 1140px;
-            height: 449px;
-            left: 390px;
-            top: 320px;
-            background: #FFF5E4;
-            border: 1px solid #FFF5E4;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            width: 864px;
+            height: 323px;
+            left: 523px;
+            top: 566px;
+            background: rgba(217, 217, 217, 0.22);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
             border-radius: 80px;
         }
 
@@ -162,7 +137,7 @@
             font-family: 'Inter';
             font-style: normal;
             font-weight: 400;
-            font-size: 25px;
+            font-size: 17px;
         }
 
         .text:hover {
@@ -183,18 +158,19 @@
         .button {
             border: none;
             position: absolute;
-            width: 90px;
-            height: 90px;
-            left: 1383px;
-            top: 791px;
+            width: 133px;
+            height: 53px;
+            left: 1262px;
+            top: 911px;
 
-            background: #FFD1D1;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 35px;
+            background: #4A99E9;
+            color: white;
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 50px;
         }
 
         .button:hover {
-            background: #e6a1a1;
+            background: #3E81C4;
         }
 
         .button:active {
@@ -216,50 +192,112 @@
                 })
             });
         });
+
+        $(document).ready(function () {
+            show_profiles();
+            console.log("ready")
+        });
+        function show_profiles() {
+            fetch('/myprofile/new1').then(res => res.json()).then(data => {
+                let rows = data['result']
+                console.log(rows)
+                $('#container').empty();
+                rows.forEach((a) => {    
+                    let imoge = a['imoge']
+                    let photo = a['photo']
+                    let name = a['name']
+                    let about_me = a['about_me']
+                    let Q1 = a['Q1']
+                    let Q2 = a['Q2']
+                    let Q3 = a['Q3']
+                    let Q4 = a['Q4']
+                    
+                    let temp_html = `<div class="container" id="container">
+                                        <div>
+                                            <text class="imoge">${imoge}</text>
+                                        </div>
+                                        <div class="photo">${photo}</div>
+                                        <div>
+                                            <text id="name" class="name">${name}</text>
+                                        </div>
+                                        <div id="test" class="about_me_area">
+                                            <text class="about_me_text">${about_me}</text>
+                                        </div>
+
+                                        <div id="tmi_area">
+                                            <text class="profile">
+                                                Profile
+                                            </text>
+                                            <div class="text">
+                                                <details>
+                                                    <summary>사용할 수 있는 언어</summary>
+                                                    <p>${Q1}</p>
+                                                </details>
+
+                                                <details>
+                                                    <summary>자신의 장점</summary>
+                                                    <p>${Q2}</p>
+                                                </details>
+
+                                                <details>
+                                                    <summary>나의 MBTI</summary>
+                                                    <p>${Q3}</p>
+                                                </details>
+
+                                                <details>
+                                                    <summary>TMI</summary>
+                                                    <p>${Q4}</p>
+                                                </details>
+                                            </div>
+                                        </div>
+                                        <button type="button" onclick="location.href='http://localhost:5000/' " class="button">뒤로가기</button>
+                                    </div>`
+                    $('#container').append(temp_html)
+                })
+            })
+        }
     </script>
 </head>
 
 <body>
-    <div class="container" id="container">
-        <div>
-            <!-- 각자 상징 이모티콘으로 바꾸시면 될 듯함 -->
-            <text class="imoge">🐶</text>
-        </div>
-        <div class="photo"></div>
-        <!-- 주소는 하이퍼링크 입니다 -->
-        <a class="address" href="https://www.naver.com/">https://www.naver.com/</a>
-        <div>
-            <text class="name">샘플</text>
-        </div>
-        <div id="test" class="about_me_area">
-            <text class="about_me_text">자기소개</text>
-        </div>
-
-        <div id="tmi_area">
-            <text class="profile">Profile</text>
-            <div class="text">
-                <details>
-                    <summary>사용할 수 있는 언어</summary>
-                    <p>Java, Spring, 각자 사용하실 수 있는 것들 ect...</p>
-                </details>
-
-                <details>
-                    <summary>자신의 장점</summary>
-                    <p>여러개 쓰고 싶다면</p>
-                    <p>이렇게 하면 됩니당</p>
-                </details>
-
-                <details>
-                    <summary>나의 MBTI</summary>
-                    <p>내부에 넣을 내용을 입력해주세요</p>
-                </details>
-
-                <details>
-                    <summary>TMI</summary>
-                    <p>내부에 넣을 내용을 입력해주세요</p>
-                </details>
-            </div>
-        </div>
-        <button type="button" onclick="location.href='http://localhost:5000/' " class="button">뒤로가기</button>
+<div class="container" id="container">
+    <div>
+        <text class="imoge">🐶</text>
     </div>
+    <div class="photo"></div>
+    <div>
+        <text class="name">이름</text>
+    </div>
+    <div id="test" class="about_me_area">
+        <text class="about_me_text">자기소개</text>
+    </div>
+
+    <div id="tmi_area">
+        <text class="profile">
+            Profile
+        </text>
+        <div class="text">
+            <details>
+                <summary>사용할 수 있는 언어</summary>
+                <p>내부에 넣을 내용을 입력해주세요</p>
+            </details>
+
+            <details>
+                <summary>자신의 장점</summary>
+                <p>내부에 넣을 내용을 입력해주세요</p>
+            </details>
+
+            <details>
+                <summary>나의 MBTI</summary>
+                <p>내부에 넣을 내용을 입력해주세요</p>
+            </details>
+
+            <details>
+                <summary>TMI</summary>
+                <p>내부에 넣을 내용을 입력해주세요</p>
+            </details>
+        </div>
+    </div>
+    <button type="button" onclick="location.href='http://localhost:5000/' " class="button">뒤로가기</button>
+</div>
 </body>

@@ -49,17 +49,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
             width: 1320px;
             height: 7000px;
             /* 나중에 값 변경할 것 */
             margin: 0px auto 0px auto;
             text-align: center;
-        }
-
         /* -------------------------------------- 여기까지 김장원 -------------------------------------- */
         /* 메인 배너 전체 사이즈와 정렬 */
-
         #main_banner {
             display: flex;
             flex-direction: column;
@@ -68,7 +64,7 @@
 
             width: 1320px;
             height: 300px;
-        }
+}
 
         /* 메인 타이틀 글자 설정 */
         #main_title {
@@ -124,7 +120,15 @@
         }
 
         /* 백설이 탑으로 가는 버튼 */
-        #top100 {
+        #top100{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            z-index: 10;
+            display: flex;
+            position: fixed;
+            bottom: 20px;
+            right:20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -141,8 +145,7 @@
             bottom: 110px;
             right: 200px;
 
-            border: 0px;
-            
+            border: 0px;      
         }
 
         #top100 > img {
@@ -197,47 +200,39 @@
         /* -------------------------------------- 여기까지 김장원 -------------------------------------- */
 
         /* -------------------------------------- 아래는 이은비 -------------------------------------- */
-      
-        .team-body {
-            box-sizing: border-box;
-            width: 920px;
-            height: 209px;
-            border: 2px solid #000000;
-
-            margin: auto;
-
-            justify-content: center;
-            align-items: center;
-
-            font-size: 20px;
-            line-height: 24px;
+        .teamtitle {
             text-align: center;
-
-            padding-top: 10px;
         }
 
-        #imoji {
-            font-size: 40px
+        .team-body {
+            background-color: grey;
+            width: 300px;
+            height: 100px;
+            margin: 20px auto 80px auto;
+        }
+
+        .card-header {
+            font-size: x-large;
+            text-align: center;
+        }
+
+        .card-text {
+            text-align: center;
+        }
+
+        .team-text {
+            margin: 20px auto 20px auto;
         }
 
         .card-title {
-            margin: 150px auto 30px auto;
+            color: white;
+            text-align: center;
+            background-color: dimgrey;
         }
 
-        .card-body {
-            width: 400px;
-            background-color: #FFF5E4;
-            height: 467px;
-            left: 760px;
-            top: 1086px;
-
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;   
-            
-            line-height: 150%;
-            text-align: left;
+        .teamintro {
+            margin-top: 0px;
+            margin-bottom: 20px;
         }
         /* -------------------------------------- 여기까지는 이은비 -------------------------------------- */
 
@@ -254,18 +249,17 @@
             border-color: white;
         }
 
-        .click_img {
+        .img {
             width: 200px;
             height: 200px;
             border-radius: 100%;
         }
-
         /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
     </style>
+
     <script>
 
-
-        // -------------------------------------- 아래는 김희석님 : guset book --------------------------------------
+        /* -------------------------------------- 아래는 김희석님 : guset book --------------------------------------*/
         function save_comment() {
             let name = $('#name').val()
             let comment = $('#comment').val()
@@ -342,7 +336,7 @@
 
         <!-- 이은비 시작-->
        <div class="teamintro">
-        <img src="/static/image/title1_2.png" style="margin: 109px 200px auto 200px">            
+        <img src="/static/image/title1_2.png" >  <!-- style = "margin : 109px 200px auto 200px;" -->
             <div class="team-body" id="bookmarkA">
                 <p>안녕하세요
                 <br>저희는 E 1명과 I 4명으로 구성된 화목한 5남매(+1) 입니다
@@ -356,33 +350,35 @@
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100">
-                        <h2 class="card-title">TMI / 우리팀의 특징</h2>
                         <div class="card-body">
-                            <img src="/static/image/Frame 2.jpg" class="card-img-top" alt="...">
+                            <h5 class="card-title">TMI / 우리팀의 특징</h5>
+                            <img src="/static/image/e1i4.png" class="card-img-top" alt="...">
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <h2 class="card-title">궁극적인 목표</h2>
                         <div class="card-body">
-                            <br> ✔ Git 사용법 숙지하기
-                            <br> ✔ 내일배움캠프 포기하지 않고 끝까지 수료하기!
-                            <br> ✔ 프론트와 백의 연결관계 이해하기
-                            <br> ✔ POST, GET 사용법 마스터하기
-                            <br> ✔ ch1 미니 project 구조 정확히 이해하고 만들기
+                            <h5 class="card-title">궁극적인 목표</h5>
+                            <P></P>
+                            <p class="card-text"> ✔ Git 사용법 숙지</p>
+                            <p class="card-text"> ✔ 내일배움캠프 포기하지 않고 끝까지 수료하기!</p>
+                            <p class="card-text"> ✔ 프론트와 백의 연결관계 이해하기</p>
+                            <p class="card-text"> ✔ POST, GET 사용법 마스터하기</p>
+                            <p class="card-text"> ✔ ch1 미니 project 구조 정확히 이해하고 만들기</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <h2 class="card-title">우리팀의 규칙</h2>
                         <div class="card-body">
-                            <br> ✔ 건강이 제일 중요! 밥 세끼 꼬박꼬박 잘 챙겨먹기💕
-                            <br> ✔ 막히는 부분이 있다면 혼자 머리싸매지 말고 팀원과 같이 해결!
-                            <br> ✔ 13-14시 점심 시간, 18-19시 저녁 시간 🐷
-                            <br> ✔ 20시 Git Merge 후 팀원들과 함께 코드리뷰 , 상세 피드백하기
-                            <br> ✔ 20시 40분 개발 일지(TIL) 작성하고 퇴실시간 맞춰 퇴실하기
+                            <h5 class="card-title">우리팀의 규칙</h5>
+                            <P></P>
+                            <p class="card-text"> ✔ 건강이 제일 중요! 밥 세끼 꼬박꼬박 잘 챙겨먹기💕</p>
+                            <p class="card-text"> ✔ 막히는 부분이 있다면 혼자 머리싸매지 말고 팀원과 같이 해결!</p>
+                            <p class="card-text"> ✔ 13-14시 점심 시간, 18-19시 저녁 시간 🐷</p>
+                            <p class="card-text"> ✔ 20시 Git Merge 후 팀원들과 함께 코드리뷰 , 상세 피드백하기</p>
+                            <p class="card-text"> ✔ 20시 40분 개발 일지(TIL) 작성하고 퇴실시간 맞춰 퇴실하기</p>
                         </div>
                     </div>
                 </div>
@@ -398,9 +394,8 @@
             <div class="row row-cols-1 row-cols-md-5 g-2">
                 <div class="col">
                     <div class="card h-100">
-                        <a href={{url_for('sub')}}>
-                            <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512"
-                                class="click_img" alt="..."></a>
+                    <a href= {{url_for('sub1')}}>
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="img" alt="..."></a>
                         <div class="name">
                             <h3>김희석</h3>
                         </div>
@@ -408,8 +403,9 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512 "
-                            class="click_img alt=" ..." onclick="profile()">
+                        <a href= {{url_for('sub2')}}>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512" class="img" alt="..."></a>
+                          <br>
                         <div class="name">
                             <h3>이은비</h3>
                         </div>
@@ -417,8 +413,10 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="click_img"
-                            alt="..." onclick="profile()">
+                        <a href= {{url_for('sub3')}}>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="img" alt="..."></a>
+
+                          <br>
                         <div class="name">
                             <h3>이현경</h3>
                         </div>
@@ -427,8 +425,8 @@
                 <div class="col">
                     <div class="card h-100">
                         <a href= {{url_for('sub4')}}>
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="click_img"
-                            alt="..." onclick="profile()"></a>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="img" alt="..."></a>
+                          <br>
                         <div class="name">
                             <h3>김장원</h3>
                         </div>
@@ -436,8 +434,9 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="click_img"
-                            alt="..." onclick="profile()">
+                        <a href= {{url_for('sub5')}}>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="img"alt="..."></a>
+                          <br>
                         <div class="name">
                             <h3>임수영</h3>
                         </div>
@@ -461,7 +460,7 @@
                 <input type="text" class="form-control" id="name" placeholder="닉네임" />
             </div>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="방명록을 작성하세요" id="comment" style="height: 100px"></textarea>
+                <textarea class="form-control" placeholder="방명록을 작성하세요" id="comment"></textarea> <!-- style="height: 100px" -->
             </div>
             <button onclick="save_comment()" type="button" class="btn btn-dark">
                 댓글 남기기
@@ -496,5 +495,4 @@
     </div>
     <!-- 김희석 끝 -->
 </body>
-
 </html>

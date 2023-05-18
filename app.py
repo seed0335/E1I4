@@ -1,13 +1,5 @@
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
-from bson.objectid import ObjectId
-import requests
-import bs4
-import logging
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-import certifi
-ca = certifi.where()
 
 # 맥 사용자는 풀어서 사용하세요 - 본인 mongoDB로 변경하기
 # import certifi
@@ -15,15 +7,14 @@ ca = certifi.where()
 
 # mongoDB는 김장원 - 본인 mongoDB로 변경하기
 from pymongo import MongoClient
-
 # 김장원mongoDB
-client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
+# client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
 # 김희석mongoDB
 # client = MongoClient('')
-# # 이은비mongoDB
-# client = MongoClient('mongodb+srv://sparta:test@cluster0.ziorpfn.mongodb.net/?retryWrites=true&w=majority',tlsCAFile = ca)
-# # 이현경mongoDB
+# 이은비mongoDB
 # client = MongoClient('')
+# 이현경mongoDB
+client = MongoClient('mongodb+srv://sparta:test@cluster0.w1iiuru.mongodb.net/?retryWrites=true&w=majority')
 # 임수영mongoDB
 # client = MongoClient('')
 db = client.dbsparta
