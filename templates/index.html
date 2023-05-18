@@ -22,16 +22,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Archivo+Black&display=swap"
+        rel="stylesheet">
 
-    <title>Member</title>
+    <title> E1I4 </title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Archivo+Black&display=swap');
 
+
+        /* 전체 폰트 지정  */
         * {
             font-family: 'Noto Sans KR', sans-serif;
         }
 
+        /* 전체 바디 사이즈 1320px */
         .wrap {
             /* 웹종반 1-9 강의 참고 */
             text-align: center;
@@ -40,24 +49,23 @@
             align-items: center;
 
             width: 1320px;
-            height: 1500px;
+            height: 7000px;
 
             margin: 0px auto 0px auto;
         }
-
+        /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
         #main_banner {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
 
             width: 1320px;
-            height: 300px;
-
-            background-size: cover;
-            background-repeat: no-repeat;
+            height: 100px;
+            padding-top: 10px;
         }
 
+        /* 메인 타이틀 글자 설정 */
         #main_title {
             display: flex;
             flex-direction: row;
@@ -67,13 +75,17 @@
             padding: 0px 0px 10px 0;
             font-size: 80px;
             font-weight: bold;
+            letter-spacing: 4px;
+
             font-family: 'Alfa Slab One', cursive;
-            letter-spacing: 6px;
+            /* font-family: 'Abril Fatface', cursive; */
+            /* font-family: 'Archivo Black', sans-serif; */
 
             color: white;
             text-shadow: -1px 0 #000, 0 2.5px #000, 1.5px 0 #000, 0 -1px #000;
         }
 
+        /* 네비게이션바 */
         #nav {
             width: 1320px;
             display: flex;
@@ -96,12 +108,35 @@
             margin: 0px 30px 0px 30px;
             list-style: none;
             font-weight: bold;
-            height: 25px;
-            font-size: 24px;
+            height: 20px;
+            font-size: 20px;
         }
 
-        /* 여기까지 김장원  */
-        /* 아래는 이은비 */
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* 백설이 탑으로 가는 버튼 */
+        #top100{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            /* z-index: 10;
+            display: flex; */
+            position: fixed;
+            bottom: 20px;
+            right:20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 0px;
+
+        }
+        /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
+
+        /* -------------------------------------- 아래는 이은비 -------------------------------------- */
         .teamtitle {
             text-align: center;
         }
@@ -133,20 +168,18 @@
         }
 
         .teamintro {
-            margin-bottom: 50px;
+            margin-top: 0px;
+            margin-bottom: 20px;
         }
+        /* -------------------------------------- 여기까지는 이은비 -------------------------------------- */
 
-        /* 여기까지는 이은비 */
-
-        /* 아래는 이현경님 */
-
+        /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
         .title {
             padding: 30px;
         }
 
         .name {
             margin: auto;
-
         }
 
         .card {
@@ -157,14 +190,11 @@
             width: 200px;
             height: 200px;
             border-radius: 100%;
-
         }
+        /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
 
-        /* 아래는 김희석님 : guset book*/
-
-
-        /* 여기까지 김희석님  */
     </style>
+    <!-- 무슨 버튼인지 아시는 분 ? 이름 적어주세요.  -->
     <script type="text/javascript">
         function profile() {
             popupWindow = window.open();
@@ -174,23 +204,7 @@
             })
         }
 
-
-        function getButton() {
-            fetch("/test").then(res => res.json()).then(data => {
-                alert(data['msg'])
-            })
-        }
-
-        function postButton() {
-            let formData = new FormData();
-            formData.append("title_give", "블랙팬서");
-
-            fetch("/test", { method: "POST", body: formData }).then(res => res.json()).then(data => {
-                alert(data['msg'])
-            })
-        }
-
-
+        // -------------------------------------- 아래는 김희석님 : guset book --------------------------------------
         function save_comment() {
             let name = $('#name').val()
             let comment = $('#comment').val()
@@ -204,7 +218,6 @@
                 window.location.reload()
             });
         }
-
 
         $(document).ready(function () {
             show_comment();
@@ -234,53 +247,54 @@
 
             })
         }
+        // -------------------------------------- 여기까지 김희석님 --------------------------------------
     </script>
 </head>
 
 <body>
-    <div class="wrap">
+    <!-- 김장원 시작-->
+    <div class="wrap" id="top0">
         <div id="main_banner">
             <div>
                 <div>
                     <h1 id="main_title">
-                        <p>E 1 I 4</p>
+                        <p>E1I4</p>
                     </h1>
-
-                </div>
-                <div>
-                    <h1>
-                        <p> &nbsp&nbsp;</p>
-                    </h1>
-
                 </div>
             </div>
         </div>
         <div id="nav">
             <ol>
-                <li>E1I4 Intro</li>
-                <li>Member</li>
-                <li>Design_Empty</li>
-                <li>Guest Book</li>
+                <li><a href="#bookmarkA">Intro</a></li>
+                <li><a href="#bookmarkB">E1I4</a></li>
+                <li><a href="#bookmarkC">멤버 소개</a></li>
+                <li><a href="#bookmarkD">방명록</a></li>
             </ol>
         </div>
+        <a href = "#top0">
+        <div id = "top100">
+            <p>TOP</p><br>
+            <img src="\static\image\백설.png" width="50px" height="50px">
+        </div>
+        </a>
+        <!-- 김장원 끝-->
 
-
+        <!-- 이은비 시작-->
         <div class="teamintro" style="align-items: center">
-            <div class="card-body">
-                <img src="/static/image/banner.png" class="card-img-top" alt="...">
+            <div class="card-body" id="bookmarkA">
+                <img src="/static/image/title1_2.png" class="card-img-top" alt="...">
                 <h5 class="card-text">안녕하세요, 저희는 E 1명과 I 4명으로 구성된 화목한 5남매(+1) 입니다 🙋🏻‍♂️🧚🏻‍♂️👩🏻🐶👩🏻‍🦰👰🏻‍♀️
                 </h5>
                 <h5>모두 비전공자이고 나이도 다르지만, 프로젝트를 완성하고자 의기투합하여 한 마음 한 뜻으로 똘똘 뭉쳤습니다 V</h5>
-
             </div>
         </div>
-        <div class="teaminfo">
+        <div class="teaminfo" id="bookmarkB">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">TMI / 우리팀의 특징</h5>
-                            <img src="/static/image/Frame 6.png" class="card-img-top" alt="...">
+                            <img src="/static/image/e1i4.png" class="card-img-top" alt="...">
                         </div>
                     </div>
                 </div>
@@ -312,9 +326,10 @@
                 </div>
             </div>
         </div>
+        <!-- 이은비 끝-->
 
-
-        <div class="title">
+        <!-- 이현경 시작-->
+        <div class="title" id="bookmarkC">
             <h2>MEMBER</h2>
         </div>
         <div class="member">
@@ -375,12 +390,15 @@
                 </div>
             </div>
         </div>
+        <!-- 이현경 -->
 
+        <!-- 아래는 임수영님 상세페이지 이동 버튼 나중에 삭제함 -->
         <div>
             <button onclick="location.href='/myprofile/new'">상세페이지</button>
         </div>
 
-        <div class="mypic">
+        <!-- 김희석님  시작-->
+        <div class="mypic" id="bookmarkD">
             <h1>GUEST BOOK</h1>
         </div>
         <div class="mypost">
@@ -421,6 +439,6 @@
             </div>
         </div>
     </div>
+    <!-- 김희석 끝 -->
 </body>
-
 </html>
