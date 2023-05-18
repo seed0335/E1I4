@@ -16,8 +16,8 @@ from pymongo import MongoClient
 # 이현경mongoDB
 client = MongoClient('mongodb+srv://sparta:test@cluster0.w1iiuru.mongodb.net/?retryWrites=true&w=majority')
 # 임수영mongoDB
-# client = MongoClient('')
-db = client.dbsparta
+# client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
+# db = client.dbsparta
 
 @app.route('/')
 def home():
@@ -29,11 +29,16 @@ def post_profile():
 
     return render_template('sub.html')
 
-@app.route("/myprofile/new1", methods=["GET"])
-def profiles_get():
-    all_profiles = list(db.profiles.find({}, {'_id': False}))
+# 현재는 사용x / sub.html로 데이터 읽는 코드 / 동적으로 굴리고 싶었다는 마음만 알아주길 바라며 남겨놓음...
+# @app.route("/myprofile/new", methods=["GET"])
+# def post_profile():
+#     return render_template('sub.html')
 
-    return jsonify({'result': all_profiles})
+# @app.route("/myprofile/new1", methods=["GET"])
+# def profiles_get():
+#     all_profiles = list(db.profiles.find({}, {'_id': False}))
+    
+#     return jsonify({'result': all_profiles})
 
 @app.route('/sub')
 def sub():
