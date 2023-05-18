@@ -4,7 +4,7 @@
 # db = client.dbsparta
 
 # doc = {
-#     'name':'name a',
+#     'name':'김장원',
 #     'about_me':'about_me a',
 #     'photo':'photo a',
 #     'imoge':'imoge a',

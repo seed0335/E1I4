@@ -19,24 +19,27 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <!-- 구글 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Archivo+Black&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Oswald:wght@500&family=Rampart+One&display=swap"
         rel="stylesheet">
-
     <title> E1I4 </title>
 
     <style>
+        /* 구글 폰트 */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Archivo+Black&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Oswald:wght@500&display=swap');
 
 
-        /* 전체 폰트 지정  */
-        * {
+
+        /* 전체 폰트 지정 */
+        #nav,
+        #bookmarkA,
+        #bookmarkB,
+        #bookmarkC,
+        #bookmarkD {
             font-family: 'Noto Sans KR', sans-serif;
         }
 
@@ -46,15 +49,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
 
             width: 1320px;
-            height: auto;
+            height: 2500px;
+            /* 나중에 값 변경할 것 */
             margin: 0px auto 0px auto;
             text-align: center;
         }
 
-        /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
+        /* -------------------------------------- 여기까지 김장원 -------------------------------------- */
         /* 메인 배너 전체 사이즈와 정렬 */
         #main_banner {
             display: flex;
@@ -77,20 +80,17 @@
             /* font-weight: bold; */
             letter-spacing: 4px;
 
-            font-family: 'Alfa Slab One', cursive;
-            /* font-family: 'Abril Fatface', cursive; */
-            /* font-family: 'Archivo Black', sans-serif; */
-
-            color: white;
-            text-shadow: -1px 0 #000, 0 2.5px #000, 1.5px 0 #000, 0 -1px #000;
+            font-family: 'Rampart One', cursive;
+            color: black;
+            /* text-shadow: -1px 0 #000, 0 2.5px #000, 1.5px 0 #000, 0 -1px #000; */
         }
 
         /* 네비게이션바 크기, 색*/
         #nav {
             width: 1320px;
             height: 50px;
-            background-color: #FF9494 ;
-            
+            background-color: #FF9494;
+
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -98,13 +98,13 @@
             padding-top: 15px;
         }
 
-        #nav > ol {
+        #nav>ol {
             display: flex;
             flex-direction: row;
             margin-right: 40px;
         }
 
-        #nav > ol > li{
+        #nav>ol>li {
             display: flex;
             flex-direction: row;
             margin: 0px 53px 0px 53px;
@@ -112,18 +112,18 @@
             font-size: 28px;
         }
 
-        #nav > ol > li > a {
+        #nav>ol>li>a {
             color: white;
             text-decoration: none;
         }
 
-        #nav > ol > li > a:hover {
+        #nav>ol>li>a:hover {
             text-decoration: none;
             color: black;
         }
 
         /* 백설이 탑으로 가는 버튼 */
-        #top100{
+        #top100 {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -132,16 +132,16 @@
             width: 10px;
             height: 10px;
             border: 1px solid black;
-            
+
             z-index: 10;
 
             display: flex;
             position: fixed;
             bottom: 110px;
-            right:200px;
-            
+            right: 200px;
 
             border: 0px;
+            
         }
 
         #top100 > img {
@@ -154,17 +154,46 @@
             font-size: 20px;
             text-decoration: none;
         }
-        
+
         #top1 {
             text-decoration: none;
             color: black;
         }
 
-        #top1 > a:hover {
+        #top1>a:hover {
             color: black;
         }
+        
+        /* 백설이 애니메이션 관련코드(코딩네컷 완주보상) */
+        @keyframes rtanee {
+        0% {
+          bottom: 0px;
+        }
+        100% {
+          bottom: 100px;
+        }
+      }
 
-        /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
+      .white {
+        position: fixed;
+        /* right: 10px;
+        bottom: 10px; */
+
+        /* 아이콘 이동 애니메이션 관련 설정 */
+        animation-name: rtanee;
+        animation-duration: 2s;
+        animation-duration: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+      }
+
+      .white {
+        width: 150px;
+        cursor: pointer;
+      }
+
+        /* -------------------------------------- 여기까지 김장원 -------------------------------------- */
 
         /* -------------------------------------- 아래는 이은비 -------------------------------------- */
         .teamtitle {
@@ -201,6 +230,10 @@
             margin-top: 0px;
             margin-bottom: 20px;
         }
+        /* 김장원 이모지 크기 테스트 */
+        #imoji {
+            font-size: 50px;
+        }
         /* -------------------------------------- 여기까지는 이은비 -------------------------------------- */
 
         /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
@@ -221,8 +254,8 @@
             height: 200px;
             border-radius: 100%;
         }
-        /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
 
+        /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
     </style>
     <script>
 
@@ -294,11 +327,11 @@
                 <li><a href="#bookmarkD">방명록</a></li>
             </ol>
         </div>
-        <a href = "#top1" id = "top1">
-        <div id = "top100">
-            <p>TOP</p>
-            <img src="\static\image\백설.png" ><!-- width="50px" height="50px" -->
-        </div>
+        <a href="#top1" id="top1">
+            <div id="top100">
+                <p>TOP</p>
+                <img src="\static\image\백설.png" class="white">
+            </div>
         </a>
         <!-- 김장원 끝-->
 
@@ -306,8 +339,8 @@
         <div class="teamintro" style="align-items: center">
             <div class="card-body" id="bookmarkA">
                 <img src="/static/image/title1_2.png" class="card-img-top" alt="...">
-                <h5 class="card-text">안녕하세요, 저희는 E 1명과 I 4명으로 구성된 화목한 5남매(+1) 입니다 🙋🏻‍♂️🧚🏻‍♂️👩🏻🐶👩🏻‍🦰👰🏻‍♀️
-                </h5>
+                <h5 class="card-text">안녕하세요, 저희는 E 1명과 I 4명으로 구성된 화목한 5남매(+1) 입니다 </h5>
+                <p id = "imoji">🙋🏻‍♂️🧚🏻‍♂️👩🏻🐶👩🏻‍🦰👰🏻‍♀️</p>
                 <h5>모두 비전공자이고 나이도 다르지만, 프로젝트를 완성하고자 의기투합하여 한 마음 한 뜻으로 똘똘 뭉쳤습니다 V</h5>
             </div>
         </div>
@@ -359,9 +392,9 @@
             <div class="row row-cols-1 row-cols-md-5 g-2">
                 <div class="col">
                     <div class="card h-100">
-                        <a href = {{url_for('sub')}}>
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="click_img"
-                            alt="..."></a>
+                        <a href={{url_for('sub')}}>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512"
+                                class="click_img" alt="..."></a>
                         <div class="name">
                             <h3>김희석</h3>
                         </div>
@@ -456,4 +489,5 @@
     </div>
     <!-- 김희석 끝 -->
 </body>
+
 </html>

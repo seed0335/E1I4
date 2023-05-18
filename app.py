@@ -39,6 +39,7 @@ def test_get():
     return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
 
 
+
 # 방명록 저장하는 곳(김희석)
 @app.route('/guestbook', methods=['POST'])
 def guestbook_post():
