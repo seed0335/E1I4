@@ -54,6 +54,7 @@
 
             text-align: center;
         }
+
         /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
         #main_banner {
             display: flex;
@@ -119,7 +120,7 @@
         }
 
         /* 백설이 탑으로 가는 버튼 */
-        #top100{
+        #top100 {
             width: 50px;
             height: 50px;
             border: 1px solid black;
@@ -127,7 +128,7 @@
             display: flex;
             position: fixed;
             bottom: 50px;
-            right:20px;
+            right: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -138,40 +139,51 @@
         /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
 
         /* -------------------------------------- 아래는 이은비 -------------------------------------- */
-        .teamtitle {
-            text-align: center;
-        }
-
+      
         .team-body {
-            background-color: grey;
-            width: 300px;
-            height: 100px;
-            margin: 20px auto 80px auto;
-        }
+            box-sizing: border-box;
+            width: 920px;
+            height: 209px;
+            border: 2px solid #000000;
 
-        .card-header {
-            font-size: x-large;
+            margin: auto;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 20px;
+            line-height: 24px;
             text-align: center;
+
+            padding-top: 10px;
         }
 
-        .card-text {
-            text-align: center;
-        }
-
-        .team-text {
-            margin: 20px auto 20px auto;
+        #imoji {
+            font-size: 40px
         }
 
         .card-title {
-            color: white;
-            text-align: center;
-            background-color: dimgrey;
+            margin: 150px auto 30px auto;
         }
 
-        .teamintro {
-            margin-top: 0px;
-            margin-bottom: 20px;
+        .card-body {
+            width: 400px;
+            background-color: #FFF5E4;
+            height: 467px;
+            left: 760px;
+            top: 1086px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;   
+            
+            line-height: 150%;
+            text-align: left;
         }
+
+
+
         /* -------------------------------------- 여기까지는 이은비 -------------------------------------- */
 
         /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
@@ -192,8 +204,8 @@
             height: 200px;
             border-radius: 100%;
         }
-        /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
 
+        /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
     </style>
     <!-- 무슨 버튼인지 아시는 분 ? 이름 적어주세요.  -->
     <script type="text/javascript">
@@ -272,56 +284,58 @@
                 <li><a href="#bookmarkD">방명록</a></li>
             </ol>
         </div>
-        <a href = "#top0">
-        <div id = "top100">
-            <p>TOP</p><br>
-            <img src="\static\image\백설.png" width="50px" height="50px">
-        </div>
+        <a href="#top0">
+            <div id="top100">
+                <p>TOP</p><br>
+                <img src="\static\image\백설.png" width="50px" height="50px">
+            </div>
         </a>
         <!-- 김장원 끝-->
 
         <!-- 이은비 시작-->
-        <div class="teamintro" style="align-items: center">
-            <div class="card-body" id="bookmarkA">
-                <img src="/static/image/title1_2.png" class="card-img-top" alt="...">
-                <h5 class="card-text">안녕하세요, 저희는 E 1명과 I 4명으로 구성된 화목한 5남매(+1) 입니다 🙋🏻‍♂️🧚🏻‍♂️👩🏻🐶👩🏻‍🦰👰🏻‍♀️
-                </h5>
-                <h5>모두 비전공자이고 나이도 다르지만, 프로젝트를 완성하고자 의기투합하여 한 마음 한 뜻으로 똘똘 뭉쳤습니다 V</h5>
+        
+       <div class="teamintro">
+        <img src="/static/image/title1_2.png" style="margin: 109px 200px auto 200px">            
+            <div class="team-body" id="bookmarkA">
+                <p>안녕하세요
+                <br>저희는 E 1명과 I 4명으로 구성된 화목한 5남매(+1) 입니다
+                <p id="imoji">🙋🏻‍♂️🧚🏻‍♂️👩🏻🐶👩🏻‍🦰👰🏻‍♀️</p>
+                <br>모두 비전공자이고 나이도 다르지만, 프로젝트를 완성하고자
+                <br>의기투합하여 한 마음 한 뜻으로 똘똘 뭉쳤습니다 V
+                </p>
             </div>
         </div>
         <div class="teaminfo" id="bookmarkB">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100">
+                        <h2 class="card-title">TMI / 우리팀의 특징</h2>
                         <div class="card-body">
-                            <h5 class="card-title">TMI / 우리팀의 특징</h5>
-                            <img src="/static/image/e1i4.png" class="card-img-top" alt="...">
+                            <img src="/static/image/Frame 2.jpg" class="card-img-top" alt="...">
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
+                        <h2 class="card-title">궁극적인 목표</h2>
                         <div class="card-body">
-                            <h5 class="card-title">궁극적인 목표</h5>
-                            <P></P>
-                            <p class="card-text"> ✔ Git 사용법 숙지</p>
-                            <p class="card-text"> ✔ 내일배움캠프 포기하지 않고 끝까지 수료하기!</p>
-                            <p class="card-text"> ✔ 프론트와 백의 연결관계 이해하기</p>
-                            <p class="card-text"> ✔ POST, GET 사용법 마스터하기</p>
-                            <p class="card-text"> ✔ ch1 미니 project 구조 정확히 이해하고 만들기</p>
+                            <br> ✔ Git 사용법 숙지하기
+                            <br> ✔ 내일배움캠프 포기하지 않고 끝까지 수료하기!
+                            <br> ✔ 프론트와 백의 연결관계 이해하기
+                            <br> ✔ POST, GET 사용법 마스터하기
+                            <br> ✔ ch1 미니 project 구조 정확히 이해하고 만들기
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
+                        <h2 class="card-title">우리팀의 규칙</h2>
                         <div class="card-body">
-                            <h5 class="card-title">우리팀의 규칙</h5>
-                            <P></P>
-                            <p class="card-text"> ✔ 건강이 제일 중요! 밥 세끼 꼬박꼬박 잘 챙겨먹기💕</p>
-                            <p class="card-text"> ✔ 막히는 부분이 있다면 혼자 머리싸매지 말고 팀원과 같이 해결!</p>
-                            <p class="card-text"> ✔ 13-14시 점심 시간, 18-19시 저녁 시간 🐷</p>
-                            <p class="card-text"> ✔ 20시 Git Merge 후 팀원들과 함께 코드리뷰 , 상세 피드백하기</p>
-                            <p class="card-text"> ✔ 20시 40분 개발 일지(TIL) 작성하고 퇴실시간 맞춰 퇴실하기</p>
+                            <br> ✔ 건강이 제일 중요! 밥 세끼 꼬박꼬박 잘 챙겨먹기💕
+                            <br> ✔ 막히는 부분이 있다면 혼자 머리싸매지 말고 팀원과 같이 해결!
+                            <br> ✔ 13-14시 점심 시간, 18-19시 저녁 시간 🐷
+                            <br> ✔ 20시 Git Merge 후 팀원들과 함께 코드리뷰 , 상세 피드백하기
+                            <br> ✔ 20시 40분 개발 일지(TIL) 작성하고 퇴실시간 맞춰 퇴실하기
                         </div>
                     </div>
                 </div>
@@ -433,4 +447,5 @@
     </div>
     <!-- 김희석 끝 -->
 </body>
+
 </html>

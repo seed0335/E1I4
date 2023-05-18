@@ -15,7 +15,17 @@ ca = certifi.where()
 
 # mongoDB는 김장원 - 본인 mongoDB로 변경하기
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
+
+# 김장원mongoDB
+client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
+# 김희석mongoDB
+# client = MongoClient('')
+# # 이은비mongoDB
+# client = MongoClient('mongodb+srv://sparta:test@cluster0.ziorpfn.mongodb.net/?retryWrites=true&w=majority',tlsCAFile = ca)
+# # 이현경mongoDB
+# client = MongoClient('')
+# 임수영mongoDB
+# client = MongoClient('')
 db = client.dbsparta
 
 @app.route('/')
