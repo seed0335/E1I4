@@ -48,13 +48,14 @@
             align-items: center;
             justify-content: center;
 
-            width: 1920px;
+            width: 1320px;
             height: auto;
-            margin: 20px 320px 0px 320px;
-
+            margin: 0px auto 0px auto;
             text-align: center;
         }
+
         /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
+        /* 메인 배너 전체 사이즈와 정렬 */
         #main_banner {
             display: flex;
             flex-direction: column;
@@ -62,8 +63,7 @@
             justify-content: center;
 
             width: 1320px;
-            height: 200px;
-            padding-top: 10px;
+            height: 300px;
         }
 
         /* 메인 타이틀 글자 설정 */
@@ -73,9 +73,8 @@
             align-items: center;
             justify-content: center;
 
-            padding: 0px 0px 10px 0;
-            font-size: 80px;
-            font-weight: bold;
+            font-size: 120px;
+            /* font-weight: bold; */
             letter-spacing: 4px;
 
             font-family: 'Alfa Slab One', cursive;
@@ -86,53 +85,83 @@
             text-shadow: -1px 0 #000, 0 2.5px #000, 1.5px 0 #000, 0 -1px #000;
         }
 
-        /* 네비게이션바 */
+        /* 네비게이션바 크기, 색*/
         #nav {
             width: 1320px;
+            height: 50px;
+            background-color: #FF9494 ;
+            
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            margin: 0px;
-            border: 0.5px solid gainsboro;
+            padding-top: 15px;
         }
 
-        div>ol {
+        #nav > ol {
             display: flex;
             flex-direction: row;
-            align-items: right;
-            justify-content: right;
             margin-right: 40px;
         }
 
-        div>ol>li {
-            margin: 0px 30px 0px 30px;
+        #nav > ol > li{
+            display: flex;
+            flex-direction: row;
+            margin: 0px 53px 0px 53px;
             list-style: none;
-            font-weight: bold;
-            height: 20px;
-            font-size: 20px;
+            font-size: 28px;
         }
 
-        a {
-            color: black;
+        #nav > ol > li > a {
+            color: white;
             text-decoration: none;
+        }
+
+        #nav > ol > li > a:hover {
+            text-decoration: none;
+            color: black;
         }
 
         /* 백설이 탑으로 가는 버튼 */
         #top100{
-            width: 50px;
-            height: 50px;
-            border: 1px solid black;
-            z-index: 10;
-            display: flex;
-            position: fixed;
-            bottom: 50px;
-            right:20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
+            width: 10px;
+            height: 10px;
+            border: 1px solid black;
+            
+            z-index: 10;
+
+            display: flex;
+            position: fixed;
+            bottom: 110px;
+            right:200px;
+            
+
             border: 0px;
+        }
+
+        #top100 > img {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+        }
+
+        #top100 > p {
+            font-size: 20px;
+            text-decoration: none;
+        }
+        
+        #top1 {
+            text-decoration: none;
+            color: black;
+        }
+
+        #top1 > a:hover {
+            color: black;
         }
 
         /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
@@ -195,15 +224,8 @@
         /* -------------------------------------- 아래는 이현경님 -------------------------------------- */
 
     </style>
-    <!-- 무슨 버튼인지 아시는 분 ? 이름 적어주세요.  -->
-    <script type="text/javascript">
-        function profile() {
-            popupWindow = window.open();
-            popupWindow.resizeTo(430, 660);
-            popupWindow.onresize = (_ => {
-                popupWindow.resizeTo(430, 660);
-            })
-        }
+    <script>
+
 
         // -------------------------------------- 아래는 김희석님 : guset book --------------------------------------
         function save_comment() {
@@ -254,7 +276,7 @@
 
 <body>
     <!-- 김장원 시작-->
-    <div class="wrap" id="top0">
+    <div class="wrap" id="top1">
         <div id="main_banner">
             <div>
                 <div>
@@ -272,10 +294,10 @@
                 <li><a href="#bookmarkD">방명록</a></li>
             </ol>
         </div>
-        <a href = "#top0">
+        <a href = "#top1" id = "top1">
         <div id = "top100">
-            <p>TOP</p><br>
-            <img src="\static\image\백설.png" width="50px" height="50px">
+            <p>TOP</p>
+            <img src="\static\image\백설.png" ><!-- width="50px" height="50px" -->
         </div>
         </a>
         <!-- 김장원 끝-->
@@ -337,8 +359,9 @@
             <div class="row row-cols-1 row-cols-md-5 g-2">
                 <div class="col">
                     <div class="card h-100">
+                        <a href = {{url_for('sub')}}>
                         <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="click_img"
-                            alt="...">
+                            alt="..."></a>
                         <div class="name">
                             <h3>김희석</h3>
                         </div>
@@ -346,7 +369,7 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512"
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512 "
                             class="click_img alt=" ..." onclick="profile()">
                         <div class="name">
                             <h3>이은비</h3>
