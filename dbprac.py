@@ -1,6 +1,6 @@
-from pymongo import MongoClient
-client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
-db = client.dbsparta
+# from pymongo import MongoClient
+# client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
+# db = client.dbsparta
 
 doc = {
     'name':'name b',
