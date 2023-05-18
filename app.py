@@ -1,13 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 from bson.objectid import ObjectId
-import requests
-import bs4
+# import requests
+# import bs4
 import logging
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
-import certifi
-ca = certifi.where()
 
 # 맥 사용자는 풀어서 사용하세요 - 본인 mongoDB로 변경하기
 # import certifi
@@ -17,7 +15,7 @@ ca = certifi.where()
 from pymongo import MongoClient
 
 # 김장원mongoDB
-client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
+# client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
 # 김희석mongoDB
 # client = MongoClient('')
 # # 이은비mongoDB
@@ -25,7 +23,7 @@ client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?re
 # # 이현경mongoDB
 # client = MongoClient('')
 # 임수영mongoDB
-# client = MongoClient('')
+client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
 db = client.dbsparta
 
 @app.route('/')
@@ -36,7 +34,17 @@ def home():
 @app.route("/myprofile/new", methods=["GET"])
 def post_profile():
     
-    return render_template('sub.html', member_id = id)
+    return render_template('sub.html')
+
+# 현재는 사용x / sub.html로 데이터 읽는 코드 / 동적으로 굴리고 싶었다는 마음만 알아주길 바라며 남겨놓음...
+# @app.route("/myprofile/new", methods=["GET"])
+# def post_profile():
+#     return render_template('sub.html')
+
+# @app.route("/myprofile/new1", methods=["GET"])
+# def profiles_get():
+    all_profiles = list(db.profiles.find({}, {'_id': False}))
+    return jsonify({'result': all_profiles})
 
 @app.route('/sub')
 def sub():
