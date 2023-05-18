@@ -6,9 +6,11 @@ import bs4
 import logging
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
+import certifi
+ca = certifi.where()
 
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://leepari20:test@cluster0.bn6xn4r.mongodb.net/')
+client = MongoClient('mongodb+srv://sparta:test@cluster0.txlb0px.mongodb.net/?retryWrites=true&w=majority',tlsCAFile =ca)
 db = client.dbsparta
 
 @app.route('/')
@@ -30,12 +32,6 @@ def guestbook_post():
 @app.route("/")
 def h1():
     return render_template('img_static.html')
-
-@app.route("/myprofile/new1", methods=["GET"])
-def profiles_get():
-    all_profiles = db.profiles.find_one({"_id": ObjectId(id)})
-    
-    return jsonify({'result': all_profiles})
 
 @app.route("/myprofile/new", methods=["GET"])
 def post_profile():
