@@ -43,16 +43,18 @@
         /* 전체 바디 사이즈 1320px */
         .wrap {
             /* 웹종반 1-9 강의 참고 */
-            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
 
             width: 1320px;
-            height: 7000px;
+            height: auto;
+            margin: 20px 320px 0px 320px;
 
-            margin: 0px auto 0px auto;
-        }
+            text-align: center;
+            }   
+        
         /* -------------------------------------- 여기까지 김장원 --------------------------------------  */
         #main_banner {
             display: flex;
@@ -195,16 +197,9 @@
 
     </style>
     <!-- 무슨 버튼인지 아시는 분 ? 이름 적어주세요.  -->
-    <script type="text/javascript">
-        function profile() {
-            popupWindow = window.open();
-            popupWindow.resizeTo(430, 660);
-            popupWindow.onresize = (_ => {
-                popupWindow.resizeTo(430, 660);
-            })
-        }
+    <script>
 
-        // -------------------------------------- 아래는 김희석님 : guset book --------------------------------------
+        /* -------------------------------------- 아래는 김희석님 : guset book --------------------------------------*/
         function save_comment() {
             let name = $('#name').val()
             let comment = $('#comment').val()
@@ -336,9 +331,8 @@
             <div class="row row-cols-1 row-cols-md-5 g-2">
                 <div class="col">
                     <div class="card h-100">
-                    <a href="sub.html">
-                        <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="img">
-                      </a>
+                    <a href= {{url_for('sub')}}>
+                        <img src="https://ca.slack-edge.com/T043597JK8V-U053UK80VR8-cbc4d9e1783b-512" class="img" alt="..."></a>
                         <div class="name">
                             <h3>김희석</h3>
                         </div>
@@ -346,9 +340,8 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <a href="sub.html">
-                            <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512" class="img">
-                          </a>
+                        <a href= {{url_for('sub')}}>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U051WD9LCNP-45ff45329ac6-512" class="img" alt="..."></a>
                           <br>
                         <div class="name">
                             <h3>이은비</h3>
@@ -357,9 +350,9 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <a href="sub.html">
-                            <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="img">
-                          </a>
+                        <a href= {{url_for('sub')}}>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U0532LT9LLE-58e265f5a665-512" class="img" alt="..."></a>
+
                           <br>
                         <div class="name">
                             <h3>이현경</h3>
@@ -368,9 +361,8 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <a href="sub.html">
-                            <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="img">
-                          </a>
+                        <a href= {{url_for('sub')}}>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U052A5UUG06-fd387358fc87-512" class="img" alt="..."></a>
                           <br>
                         <div class="name">
                             <h3>김장원</h3>
@@ -379,9 +371,8 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <a href="sub.html">
-                            <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="img">
-                          </a>
+                        <a href= {{url_for('sub')}}>
+                            <img src="https://ca.slack-edge.com/T043597JK8V-U053QSM8MT4-e435cca492ea-512" class="img"alt="..."></a>
                           <br>
                         <div class="name">
                             <h3>임수영</h3>
