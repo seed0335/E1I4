@@ -8,9 +8,9 @@ app = Flask(__name__)
 # mongoDB는 김장원 - 본인 mongoDB로 변경하기
 from pymongo import MongoClient
 # 김장원mongoDB
-client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
+# client = MongoClient('mongodb+srv://sparta:test@cluster0.rsr8xyc.mongodb.net/?retryWrites=true&w=majority')
 # 김희석mongoDB
-# client = MongoClient('mongodb+srv://sparta:test@cluster0.txlb0px.mongodb.net/?retryWrites=true&w=majority',tlsCAFile =ca')
+client = MongoClient('mongodb+srv://sparta:test@cluster0.txlb0px.mongodb.net/?retryWrites=true&w=majority')
 # 이은비mongoDB
 # client = MongoClient('mongodb+srv://sparta:test@cluster0.ziorpfn.mongodb.net/?retryWrites=true&w=majority',tlsCAFile = ca')
 # 이현경mongoDB
